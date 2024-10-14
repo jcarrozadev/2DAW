@@ -1,0 +1,363 @@
+/* Javier Arias Carroza */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+/* CSS Adaptado para la resolución 1280px */
+
+/* Gama de colores */
+
+/*
+
+Color 1: #1cebd7
+Color 2: #15d8c5
+Color 3: #0ec5b3
+Color 4: #07b2a0
+Color 6: #009f8e 
+
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(../img/background2.jpeg);
+    font-family: Poppins; 
+    font-weight: 400;
+    font-size: 1.0rem;
+    
+}
+
+h1 {
+    margin: 3vh;
+    font-family: Mukta;
+    font-size: xx-large;
+    font-weight: 800;
+    color: #183f89;
+}
+
+h2 {
+    margin: 3vh;
+    font-family: Mukta;
+    font-size: x-large;
+    font-weight: 800;
+    color: #2681ba;
+}
+
+/* Barra de Navegación */
+
+nav {
+    padding: 2.5vh;
+    margin-bottom: 2%;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,0) 0%, rgba(9,9,121,0.5478524173341212) 35%, rgba(0,212,255,0.752334210051208) 100%);
+}
+
+nav ul li a img {
+    vertical-align: middle;
+    text-align: center;
+}
+
+nav ul li a{
+    font-family: bebas neue;
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: white;
+    padding: 1vh;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: #2681ba;
+    box-shadow: 0px 0px 10px #183f89;
+    transition: 1.0s;
+}
+
+nav ul a img {
+    vertical-align: middle;
+    padding: 1vh;
+}
+
+nav ul li {
+    padding: 1vh;
+    display: inline;
+}
+
+.derecha {
+    padding: 1.5vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    float:right;
+} 
+
+/* Fin Barra de Navegación */
+
+#contenedorInicial {
+    background-color: rgba(240, 248, 255, 0.9);
+    border: 2px solid #2681ba;
+    box-shadow: 0px 0px 15px #2681ba;
+}
+
+#contenedorInicial table {
+    margin: 1%;
+}
+
+#contenedorInicial table tr td img {
+    width: 90%;
+    margin: 5%;
+    border-radius: 5px;
+    border: 3px solid #2681ba;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.43);
+}
+
+#contenedorInicial table tr td img:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+#contenedorInicial table tr td {
+    vertical-align: middle;
+    padding: 1%;
+}
+
+/* Span a destacar */
+
+.destacable {
+    color:#4cbeea;
+    font-weight: bold;
+}
+
+/* Tabla Contenido */ 
+
+#tablaContenido {
+    width: 30%;
+    border-radius: 15px;
+    margin: 5vh;
+    padding: 1vh;   
+}
+
+#tablaContenido > div {
+    text-align: center;
+    margin: 0;
+    padding: 2vh;
+    border-radius: 15px;
+    background-color: rgb(130, 187, 231);
+    max-width:29vw;
+    font-family: Mukta;
+    font-weight: 800;
+    font-size: x-large;
+}
+
+#tablaContenido details {
+    margin: 1%;
+    padding: 2%;
+    background-color: #2681ba;
+    border-radius: 5px;
+}
+
+#tablaContenido details:hover {
+    background-color: rgb(130, 187, 231);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#tablaContenido > details > div > p {
+    padding: 3%;
+    color: rgb(244, 244, 244);
+    font-size: 1.0rem;
+    word-spacing: 1px;
+}
+
+#tablaContenido ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+#tablaContenido ul li a:hover{
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+/* Ranking tabla desastres */
+
+#contenedorDesastres {
+    background-color: #2681bad2;
+    border: 2px solid aliceblue;
+    box-shadow: 0px 0px 15px #2681ba;
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: 4px;
+    font-family: Mukta;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+#tablaDesastres {
+    float: left;
+    margin: 2% 10% 2% 5%;
+}
+
+#tablaDesastres > table > caption {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: Mukta;
+}
+
+#tablaDesastres > table {
+    background-color: aliceblue;
+    box-shadow: 0px 0px 10px #183f89;   
+}
+
+#tablaDesastres > table, #tablaDesastres > table td {
+    border: 2px solid #183f89;
+}
+
+#tablaDesastres > table td {
+    padding: 10px;
+}
+
+#listaDesastres {
+    padding-top: 2%;
+    float: right;
+}
+
+#listaDesastres > ul > li {
+    padding: 5%;
+}
+
+#listaDesastres > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+#listaDesastres > ul > li > a:hover {
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+.limpiarfloat {
+    clear: both;
+}
+
+/* Hover tablas */
+
+#tablaDesastres:hover, #tablaContenido:hover, #contenedorPrincipal figure figcaption:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+/* Plantilla Noticias */
+
+.noticia {
+    margin-top: 2%;
+    width: 100vw;
+    max-height: max-content;
+    background-color: rgba(240, 248, 255, 0.9);
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.noticia table {
+    background-color: #2681ba;
+}
+
+.noticia table tr td {
+    border: 2px solid white;
+    vertical-align: middle;
+}
+
+.noticia table tr td:nth-of-type(1) {
+    width: 20%;
+}   
+
+.noticia table tr td:nth-of-type(2) {
+    width: 59%;
+    padding: 1%;
+}
+
+.noticia h1 {
+    color: #183f89;
+    font-family: Mukta;
+    font-weight: 800;
+}
+
+.noticia img {
+    width: 100%;
+}
+
+/* Noticia 1 */
+
+.noticia1 {
+    margin-top: 2%;
+    width: 100vw;
+    max-height: max-content;
+    background-color: rgba(240, 248, 255, 0.9);
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.noticia1 table {
+    background-color: #2681ba;
+}
+
+.noticia1 table tr td {
+    border: 2px solid white;
+    vertical-align: middle;
+}
+
+.noticia1 table tr td:nth-of-type(1) {
+    width: 59%;
+    padding: 1%;
+}   
+
+.noticia1 table tr td:nth-of-type(2) {
+    width: 20%;
+}
+
+.noticia1 h1 {
+    color: #183f89;
+    font-family: Mukta;
+    font-weight: 800;
+    text-align: right;
+}
+
+.noticia1 img {
+    width: 100%;
+}
+
+.noticia table:hover, .noticia1 table:hover {
+    background-color: #2b94d4;
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+
+/* Footer */
+
+footer {
+    background-color: #183f89;
+    width: auto;
+    margin-top: 2%;
+    padding: 2%;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer ul li {
+    display: inline;
+}
+
+footer ul li:nth-of-type(2) {
+    margin-left: 62%;
+    font-family: Bebas Neue;
+    font-size: x-large;
+    color: rgb(238, 238, 238);
+}
+
+footer ul li img {
+    vertical-align: middle;
+    width: 15%;
+}

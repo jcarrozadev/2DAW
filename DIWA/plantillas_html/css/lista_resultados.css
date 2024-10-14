@@ -1,0 +1,21 @@
+.tabla >  div:nth-of-type(odd){ /* Sólo los impares */
+    background-color: lightblue;
+}
+
+.tabla >  div:nth-of-type(even){ /* Sólo los pares */
+    background-color: lightgrey;
+}
+
+.tabla {
+    display: grid;
+    gap: 4% ;
+    background-color: tomato;
+    width: 40%;
+    margin: 2%;
+    text-align: center;
+}
+
+.tabla>div {
+    display: grid;
+    grid-template-columns: 10vw 10vw 10vw;
+}

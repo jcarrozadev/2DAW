@@ -1,0 +1,55 @@
+1. Análisis
+    - Identificar Datos de Entrada | Tipo de dato | Canal (fichero, consola, pantalla...)
+    - Identificar Datos de Salida | Tipo de dato | Canal (fichero, consola, pantalla...)
+
+2. Ejemplos
+    Datos de Entrada        Datos de Salida
+    ejemplo1                ejemplo1
+    ejemplo2                ejemplo2
+    ejemplo3                ejemplo3
+
+3. Pseudocódigo
+
+    1. Calculo la raíz cuadrada...
+    2. Quito los decimales...
+
+4. Andamio
+    - Estructuras Datos
+    - Definir Algoritmos
+    - Organizar Código
+
+
+-------------------------------------------
+
+Herramientas para tener:
+
+    - Contador
+    - Sumador / Acumulador
+    - Máx y Min
+    - Filtro
+
+--------------------------------------------
+
+/*************** Acepta el Reto 119 ***************/
+
+1. Análisis
+    - DE: numLegionarios: entero positivo | Fichero
+    - DS: numEscudos: entero positivo | Consola
+
+2. Ejemplos
+    numLegionarios          numEscudos
+    35                      71
+    20                      44
+    10                      26
+    -34                     Error
+    Zapato                  Error
+    1.56                    Error
+    1                       5
+    0                       Salir
+
+3. Pseudocódigo
+
+    1. Calculo la raíz cuadrada de numLegionarios.
+    2. Quito los decimales de la raizNum
+    3. Resto el cuadrado de raíz a numLegionarios
+    4. Calculo los escudos de un cuadrado de lado

@@ -1,0 +1,158 @@
+/* Javier Arias Carroza */
+#tituloform {
+    width: 25%;
+    display: inline-block;
+}
+
+#infoContacta {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border: 2px solid #2681ba;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#infoContacta > p {
+    margin: 2%;
+    margin-bottom: 3%;
+}
+
+#infoContacta > ol {
+    margin: 2%;
+}
+
+#infoContacta > ol > li {
+    margin: 2%;
+}
+
+.financiacion { 
+    border: 2px solid #2681ba;
+    width: 96%;
+    max-height: 80%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.financiacion:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+    box-shadow: 0px 0px 10px #2e9add;
+}
+
+.pais {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.barra {
+    flex: 1;
+    height: 20px;
+    background-color: #e0e0e0;
+    margin: 0 10px;
+    position: relative;
+}
+
+.porcentaje {
+    height: 100%;
+    background-color: #1d6693;
+}
+
+#asia {
+    width: 30%;
+}
+
+#europa {
+    width: 70%;
+}
+
+#usa {
+    width: 50%;
+}
+
+form {
+    font-family: Poppins;
+    padding: 20px;
+    border: 2px solid #2681ba;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 60%;
+    margin: 3% 0% 3% 18%;
+}
+
+form input[type="text"], form input[type="email"], form textarea {
+    width: 97%;
+    padding: 10px;
+    margin: 10px 0;
+    max-width: 97%;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+form input[type="text"]:hover, form input[type="date"]:hover {
+    background-color: #34a7ee;
+    transition: 0.5s;
+}
+
+form input[type="date"] {
+    width: 97%;
+    padding: 10px;
+    margin: 10px 0;
+    max-width: 97%;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+form input[type="checkbox"] {
+    margin: 10px 0;
+}
+
+form input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+form input[type="submit"] {
+    font-family: Poppins;
+    background-color: #2681ba;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer; /* Cambia el ratón */
+}
+
+form input[type="submit"]:hover {
+    background-color: #1d6693;
+    /* box-shadow: 0px 0px 10px #2e9add; */
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+form input[type="reset"] {
+    font-family: Poppins;
+    background-color: #999999;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer; /* Cambia el ratón */
+}
+
+form input[type="reset"]:hover {
+    background-color: #868686;
+    /* box-shadow: 0px 0px 10px #7d7d7d; */
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+#sexospace {
+    margin-bottom: 1%;
+}

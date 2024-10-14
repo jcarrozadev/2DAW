@@ -1,0 +1,9 @@
+es.javascript.info
+
+
+- Leerse introducción y hola mundo
+
+
+libro Clean Code - Código Limpio: Manual de estilo para el desarrollo ágil de software
+
+

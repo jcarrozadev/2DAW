@@ -1,0 +1,24 @@
+:root {
+    --color: rgb(97, 158, 223);
+}
+
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5vh;
+}
+
+h1 {
+    color: var(--color);
+}
+
+figure {
+    background-color: var(--color);
+    padding: 1%;
+    border-radius: 4px;
+    margin: 1%;
+    width: 20%;
+}
+
+figcaption {
+    text-align: center;
+}

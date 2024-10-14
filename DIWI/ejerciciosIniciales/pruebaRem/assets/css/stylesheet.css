@@ -1,0 +1,19 @@
+/* Javier Arias Carroza */
+html {
+    font-size: 16px;
+}
+
+div {
+    background-color: tomato;
+    font-size: 32px;
+}
+
+div > div:nth-of-type(1) {
+    background-color: rgb(169, 255, 255);
+    width: 10em; /* Coge el tamaño del contenedor del padre*/
+}
+
+div > div:nth-of-type(2) {
+    background-color: beige;
+    width: 10rem; /* Coge el tamaño del HTML */
+}
