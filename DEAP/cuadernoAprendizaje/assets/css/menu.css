@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: anton;
+}
+html{
+    width: 100%;
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; /* Quitar el scroll en firefox */
+}
+
+html body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.parallax{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s;
+}
+
+.parallax:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, #000522, transparent);
+    z-index: 1;
+}
+
+.parallax img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.parallax2:before{
+    background: linear-gradient(to top, #2c2c2cd9, transparent);
+    z-index: 3;
+}
+
+
+#titulo{
+    font-family: bebas neue;
+    position: relative;
+    color: #fff;
+    font-size: 11vw;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#nombre {
+    font-family: Nunito;
+    font-size: medium;
+    display: block;
+}
+
+/* Termina el parallax */
+
+.sec{
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.sec h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: #80baea;
+}
+
+.sec p{
+    font-size: 1.2rem;
+    color: white;
+}
+
+.cajasTem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6%;
+    width: 37vw;
+    height: 23vh;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #de8c11, #ffa614);
+    box-shadow:  5px 5px 23px #925b0b,
+             -5px -5px 23px #ffdb1b;
+}
+
+.cajasTem:hover {
+    background: linear-gradient(145deg, #de8c11, #ce8510);
+    box-shadow:  5px 5px 23px #925b0b,
+             -5px -5px 23px #ffdb1b;
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+
+.cajasTem>h1{
+    font-size: 3em;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.50rem;
+}
+
+.cajasTem>button{
+    margin-top: 1%;
+    width: 50%;
+    height: 5vh;
+    border: none;
+    color: rgb(33, 33, 33);
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-radius: 3px;
+    background: #ffffff;
+}
+
+.cajasTem>button:hover{
+    background: #c8c1b6;
+    color: white;
+    transition: all 0.2s;
+}
+
+.cajasTem>h1>span{
+    color: rgb(249, 57, 57);
+}
+
+.cajasTem>button>span{
+    color: rgb(249, 57, 57);
+}
+
+.principal{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Horizontal */
+.no-principal{
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.no-principal::-webkit-scrollbar {
+    display: none; /* Oculta la barra de scroll horizontal en chrome safari explorer*/
+}
+
+.no-principal {
+    scrollbar-width: none; /* Oculta la barra de scroll horizontal */
+}
+
+.slide{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.slide:nth-child(1){
+    background: rgb(235, 153, 46);
+    background-size: cover;
+    background-attachment: fixed;
+    text-transform: uppercase;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 7%;
+    min-width: 100vh;
+    justify-items: center;
+}
+
+.blur{
+    filter: blur(2px);
+}
+
+/* Media Query para telefonos */
+@media (max-width: 600px) {
+    html {
+        font-size: 50%; /* Reducir el tamaño base del texto a 1rem = 8px */
+    }
+
+    #titulo {
+        font-size: 7vw; /* Ajuste del tamaño del título principal */
+    }
+
+    .sec {
+        grid-template-columns: 1fr; /* Mostrar las tarjetas en una sola columna */
+        padding: 10px;
+    }
+
+    .cajasTem {
+        width: 80vw; /* Ancho de las tarjetas adaptado a pantallas más pequeñas */
+        height: auto; /* Ajuste de la altura de las tarjetas */
+        padding: 20px; /* Reducir el padding */
+    }
+
+    .cajasTem > h1 {
+        font-size: 2em; /* Reducir el tamaño del título en las tarjetas */
+    }
+
+    .cajasTem > button {
+        font-size: 1rem; /* Tamaño del texto de los botones */
+        height: 5vh; /* Altura del botón adaptada */
+    }
+}
+
+/* Media Query para tablets */
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    html {
+        font-size: 55%; /* Ajustar la escala del texto a 1rem = 8.8px */
+    }
+
+    #titulo {
+        font-size: 8vw; /* Ajustar el tamaño del título */
+    }
+
+    .sec {
+        grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
+        padding: 20px;
+    }
+
+    .cajasTem {
+        width: 60vw; /* Ajustar el ancho de las tarjetas */
+        height: 25vh; /* Altura ajustada de las tarjetas */
+    }
+
+    .cajasTem > h1 {
+        font-size: 2.5em; /* Reducir ligeramente el tamaño del título */
+    }
+
+    .cajasTem > button {
+        font-size: 1.2rem; /* Botón ligeramente más pequeño */
+        height: 4vh;
+    }
+}
+
+/* Media Query para pantallas grandes */
+
+@media (min-width: 1025px) {
+    html {
+        font-size: 62.5%; /* Restablecer el tamaño base de 1rem = 10px */
+    }
+
+    .sec {
+        grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
+    }
+
+    .cajasTem {
+        width: 37vw;
+        height: 23vh;
+    }
+
+    .cajasTem > h1 {
+        font-size: 3em;
+    }
+
+    .cajasTem > button {
+        font-size: 1.3rem;
+    }
+}

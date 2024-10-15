@@ -1,139 +1,50 @@
-<!-- Javier Arias Carroza -->
 <!DOCTYPE html>
-    <html lang=es>
-    <head>
-        <meta charset=UTF-8>
-        <meta name=viewport content='width=device-width, initial-scale=1.0'>
-        <meta name=author content='Javier Arias Carroza jariasc14@gmail.com'>
-        <link rel=icon type=image/x-icon href=assets/img/favicon.svg>
-        <title>DEAP | Diario de Aprendizaje</title>
-        <!-- <link rel=stylesheet href=assets/css/reset.css> -->
-        <!-- Resto de Hojas de estilo CSS -->
-        <link rel=stylesheet href=assets/css/header.css>
-        <link rel=stylesheet href=assets/css/stylesheet.css>
-        <link rel=stylesheet href=assets/css/footer.css>
-        <link rel=stylesheet href=assets/css/mediaquery.css>
-    </head>
-    <body>
-        <header>
-            <div class="logo">
-                <img src="assets/img/favicon.svg" alt="Logo">
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li>
-                        <a href="#temario1">Temario 1</a>
-                    </li>
-                    <li>
-                        <a href="">Temario 2 <span class="locked">[Locked]</span></a>
-                    </li>
-                    <li>
-                        <a href="">Temario 3 <span class="locked">[Locked]</span></a>
-                    </li>
-                </ul>
-            </nav>
-            <a href="perfil.html" class="btn"> <button>Perfil</button> </a>
-        </header>
-        <main>
-            <div class="contenedorInicial">
-                <div>
-                    <figure>
-                        <img src="assets/img/inicial.jpeg" alt="Foto Inicial">
-                        <figcaption>Foto generada de Microsoft Designer.</figcaption>
-                    </figure>
-                    
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name=author content='Javier Arias Carroza jariasc14@gmail.com'>
+    <link rel=icon type=image/x-icon href=assets/img/favicon.svg>
+    <title>DEAP | Diario de Aprendizaje</title>
+    <link rel="stylesheet" href="./assets/css/menu.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/inicio.js"></script>
+</head>
+<body>
+    <section class="parallax no-principal parallax2">
+        <img src="./assets/img/fondo.avif" id="bg" class="blur" alt="Imagen Introductoria">
+        <h1 id="titulo">Cuaderno Aprendizaje<span id="nombre">Javier Arias Carroza</span></h1>
+    </section>
+    <div class="principal">
+            <div class="slide sec">
+                <div class="cajasTem">
+                    <h1>Temario 1</h1>
+                    <button id="u1">ENTRAR</button>
                 </div>
-                <div>
-                    Este es el cuaderno / diario de Aprendizaje de <span class="destacable">Javier Arias Carroza</span>, alumno de 2º de Desarrollo de Aplicaciones Web, hecho para el módulo de Despliegue de Aplicaciones Web.
-                    <br><br>Aquí se recogerán los apuntes, ejercicios y proyectos realizados durante el curso.
-                    <br>El contenido de este cuaderno es de uso exclusivo para el profesor y el alumno.
-                    <br>Este cuaderno está diseñado para facilitar el seguimiento del progreso y el aprendizaje a lo largo del curso. Cada sección está organizada de manera que sea fácil de navegar y encontrar la información necesaria.
-                    <br><br>Se irán añadiendo nuevas secciones y contenido a medida que avance el curso. La finalidad es que sirva como método de estudio / repaso.
+                <div class="cajasTem">
+                    <h1>Temario 2 </h1>
+                    <button><span>Locked</span></button>
+                </div>
+                <div class="cajasTem">
+                    <h1>Temario 3</h1>
+                    <button><span>Locked</span></button>
+                </div>
+                <div class="cajasTem">
+                    <h1>Temario 4</h1>
+                    <button><span>Locked</span></button>
+                </div>
+                <div class="cajasTem">
+                    <h1>Temario 5</h1>
+                    <button><span>Locked</span></button>
+                </div>
+                <div class="cajasTem">
+                    <h1>Temario 6</h1>
+                    <button><span>Locked</span></button>
                 </div>
             </div>
-            <hr>
-            <section class="contenedorTemario temario1">
-                <h1 id="temario1">Temario 1 - Git</h1>
-                <article>
-                    <details>
-                        <summary>¿Qué es Git?</summary>
-                        <p>Git es un sistema de control de versiones distribuido de código abierto y gratuito diseñado para manejar todo, desde proyectos pequeños hasta muy grandes con velocidad y eficiencia.</p>
-                    </details>
-                    <details>
-                        <summary>¿Para que nos servirá?</summary>
-                        <p>
-                            Git servirá tanto para nuestra estancia en la Escuela como para nuestro futuro como profesionales.
-                            Es una herramienta muy potente y útil para el desarrollo de software que usan la gran mayoría de las empresas.
-                        </p>
-                    </details>
-                    <details>
-                        <summary>Cómo generar un repositorio desde un IDE</summary>
-                        <p>
-                            Para generar un repositorio desde un IDE, en este caso Visual Studio Code, seguiremos los siguientes pasos:
-                        </p>
-                        <ol>
-                            <li>Abriremos Visual Studio Code</li>
-                            <li>Crearemos una nueva carpeta</li>
-                            <li>Abriremos la terminal</li>
-                            <li>Escribiremos el comando <code>git init</code></li>
-                            <li>Con esto ya tendremos nuestro repositorio local</li>
-                        </ol>
-                    </details>
-                    <details>
-                        <summary>Plantilla para usar en Repositorios para GitHub</summary>
-                        <p>
-                            Para crear e inicializar un repositorio en GitHub, tendremos que usar este comando.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git init
-                            </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
-                        <p>
-                            Para añadir todos los archivos al repositorio, usaremos este comando.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git add .
-                            </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
-                        <p>
-                            Para hacer el primer commit, usaremos este comando.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git commit -m "first commit"
-                            </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
-                        <p>
-                            El siguiente comando nos servirá para enlazar nuestro repositorio local con el de GitHub.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git remote add origin https://github.com/NOMBRE_USUARIO/NOMBRE_PROYECTO.git
-                            </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
-                        <p>
-                            Por último, usaremos este comando para subir nuestro contenido al repositorio de GitHub.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git push -u origin master
-                            </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
-                    </details>
-                </article>
-            </section>
-        </main>
-        <footer>
-            Desarrollado por Javier Arias Carroza
-        </footer>
-
-        <script src=assets/js/copiar.js></script>
-    </body>
+        </div>
+    </div>
+</body>
 </html>
