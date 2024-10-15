@@ -57,7 +57,11 @@
                 <article>
                     <details>
                         <summary>¿Qué es Git?</summary>
-                        <p>Git es un sistema de control de versiones distribuido de código abierto y gratuito diseñado para manejar todo, desde proyectos pequeños hasta muy grandes con velocidad y eficiencia.</p>
+                        <p>
+                            Git es un sistema de control de versiones distribuido de código abierto y gratuito diseñado para manejar todo, desde proyectos pequeños hasta muy grandes con velocidad y eficiencia.
+                            <br>
+                            Suele estar integrado en IDE´s como Visual Studio Code, Eclipse, etc.
+                        </p>
                     </details>
                     <details>
                         <summary>¿Para que nos servirá?</summary>
@@ -67,22 +71,56 @@
                         </p>
                     </details>
                     <details>
+                        <summary>Diferentes estados para subida de archivos</summary>
+                        <p>
+                            En Git, cuando usamos la consola para agregar archivos a nuestro repositorio, estos pasan por diferentes estados.
+                        </p>
+                        <div class="estsubidas">
+                            <span id="untracked" class="subidas">Untracked (U)</span><br>
+                            Archivo no marcado
+                        </div>
+                        <div class="estsubidas">
+                            <span id="added" class="subidas">Added (A)</span><br>
+                            Archivo agregado para subir
+                        </div>
+                        <div class="estsubidas">
+                            <span id="modified" class="subidas">Modified (M)</span><br>
+                            Archivo ya marcado y ahora modificado
+                        </div>
+                        <div class="estsubidas">
+                            <span id="staged" class="subidas">Staged</span><br>
+                            Archivo preparado para commit
+                        </div>
+                        <div class="estsubidas">
+                            <span id="commited" class="subidas">Commited</span><br>
+                            Archivo guardado en local y preparado para push
+                        </div>
+                    </details>
+                    <details>
                         <summary>Cómo generar un repositorio desde un IDE</summary>
                         <p>
                             Para generar un repositorio desde un IDE, en este caso Visual Studio Code, seguiremos los siguientes pasos:
                         </p>
                         <ol>
                             <li>Abriremos Visual Studio Code</li>
-                            <li>Crearemos una nueva carpeta</li>
-                            <li>Abriremos la terminal</li>
+                            <li>
+                                Crearemos una nueva carpeta con los archivos que queramos agregar a nuestro repositorio
+                            </li>
+                            <li>
+                                Abriremos la terminal. En Visual Studio Code, podemos hacerlo con el atajo <code>Ctrl + ñ</code>
+                            </li>
                             <li>Escribiremos el comando <code>git init</code></li>
-                            <li>Con esto ya tendremos nuestro repositorio local</li>
+                            <li>
+                                Con esto ya tendremos nuestro repositorio local, aunque nos falta enlazarlo con GitHub.<br>
+                                Siguiente punto para ello.
+                            </li>
                         </ol>
                     </details>
                     <details>
-                        <summary>Plantilla para usar en Repositorios para GitHub</summary>
+                        <summary>Formar Repositorios para GitHub - Línea de Comandos</summary>
+                        <hr>
                         <p>
-                            Para crear e inicializar un repositorio en GitHub, tendremos que usar este comando.
+                            Lo primero de todo. Para comenzar e inicializar un repositorio en GitHub, tendremos que usar este comando.
                         </p>
                         <div class="plantillaGitHub">
                             <p class="gitPlantilla">
@@ -90,6 +128,10 @@
                             </p>
                             <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
                         </div>
+                        <p>
+                            Este comando nos servirá para inicializar nuestro repositorio local y comenzar a trabajar con él.
+                        </p>
+                        <hr>
                         <p>
                             Para añadir todos los archivos al repositorio, usaremos este comando.
                         </p>

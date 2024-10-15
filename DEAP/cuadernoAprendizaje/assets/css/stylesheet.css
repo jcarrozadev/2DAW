@@ -142,3 +142,44 @@ hr {
 .locked:hover {
     color: rgb(231, 38, 38);
 }
+
+/* Botones estado subida archivos */
+.estsubidas {
+    background-color: rgb(187, 187, 244);
+    color: black;
+    width: fit-content;
+    display: inline-block;
+    margin: 0.5%;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.estsubidas:hover {
+    background-color: rgba(126, 173, 245, 0.771);
+    transition: all 0.3s;
+    transform: scale(1.02);
+}
+
+.subidas {
+    font-weight: bold;
+}
+
+#untracked {
+    color: gray;
+}
+
+#added {
+    color: rgb(85, 161, 85);
+}
+
+#modified {
+    color: #653579;
+}
+
+#staged {
+    color: #5b9696;
+}
+
+#commited {
+    color: #c0b449;
+}
