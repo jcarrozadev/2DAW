@@ -150,6 +150,29 @@ details > h2:hover {
     padding: 0 3%;
 }
 
+/* Temario Locked */
+
+.lockedCont {
+    margin-top: 1.2%;
+    background-color: var(--principal);
+    padding: 2%;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.lockedCont > p {
+    color:rgb(231, 38, 38);
+    font-size: large;
+}
+
+.lockedCont:hover {
+    transform: scale(1.005);
+    transition: all 0.3s;
+}
+
+/* Clases y Elementos */
+
 .plantillaGitHub {
     margin: 0.5% 0%;
     position: relative;
