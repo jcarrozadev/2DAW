@@ -335,6 +335,48 @@
                         <details>
                             <summary>Comandos de Uso Frecuentes</summary>
                             <hr>
+                            <h2>Crear Tag</h2>
+                            <p>
+                                Para crear un tag, se debe utilizar el comando git tag seguido del nombre del tag.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git tag &lt;nombre_tag>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, crearemos un tag con el nombre que le hayamos dado.
+                            </p>
+                            <hr>
+                            <h2>Agregar Tag a Commit</h2>
+                            <p>
+                                Para agregar un tag a un commit, se debe utilizar el comando git tag -a seguido del nombre del tag y el hash del commit.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git tag -a &lt;nombre_tag> -m "Mensaje del tag" &lt;hash_commit>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, añadiremos un tag al commit con el nombre que le hayamos dado.
+                            </p>
+                            <hr>
+                            <h2>Ver Tags</h2>
+                            <p>
+                                Para ver los tags, se debe utilizar el comando git tag.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git tag
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, veremos todos los tags que tengamos en nuestro repositorio.
+                            </p>
+                            <hr>
                             <h2>Ver Estado de Archivos</h2>
                             <p>
                                 Para ver el estado de los archivos, se debe utilizar el comando git status.
