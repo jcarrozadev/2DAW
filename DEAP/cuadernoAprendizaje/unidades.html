@@ -9,10 +9,10 @@
         <title>DEAP | Diario de Aprendizaje</title>
         <!-- <link rel=stylesheet href=assets/css/reset.css> -->
         <!-- Resto de Hojas de estilo CSS -->
-        <link rel=stylesheet href=assets/css/header.css>
-        <link rel=stylesheet href=assets/css/stylesheet.css>
-        <link rel=stylesheet href=assets/css/footer.css>
-        <link rel=stylesheet href=assets/css/mediaquery.css>
+        <link rel=stylesheet href=./assets/css/header.css>
+        <link rel=stylesheet href=./assets/css/stylesheet.css>
+        <link rel=stylesheet href=./assets/css/footer.css>
+        <link rel=stylesheet href=./assets/css/mediaquery.css>
     </head>
     <body>
         <header>
@@ -71,7 +71,29 @@
                         </p>
                     </details>
                     <details>
-                        <summary>Diferentes estados para subida de archivos</summary>
+                        <summary>Cómo generar un repositorio desde un IDE</summary>
+                        <p>
+                            Para generar un repositorio desde un IDE, en este caso Visual Studio Code, seguiremos los siguientes pasos:
+                        </p>
+                        <div id="pasosRepositorioIDE">
+                            <ol>
+                                <li>Abriremos Visual Studio Code</li>
+                                <li>
+                                    Crearemos una nueva carpeta con los archivos que queramos agregar a nuestro repositorio
+                                </li>
+                                <li>
+                                    Abriremos la terminal. En Visual Studio Code, podemos hacerlo con el atajo <span class="destacable">Ctrl + ñ</span>
+                                </li>
+                                <li>Escribiremos el comando <span class="destacable">git init</span></li>
+                                <li>
+                                    Con esto ya tendremos nuestro repositorio local, aunque nos falta enlazarlo con GitHub.<br>
+                                    <span class="destacable">Punto de &lt;Temario Comandos de GitHub> para ello.</span>.
+                                </li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Estados para Subida de Archivos</summary>
                         <p>
                             En Git, cuando usamos la consola para agregar archivos a nuestro repositorio, estos pasan por diferentes estados.
                         </p>
@@ -97,77 +119,307 @@
                         </div>
                     </details>
                     <details>
-                        <summary>Cómo generar un repositorio desde un IDE</summary>
-                        <p>
-                            Para generar un repositorio desde un IDE, en este caso Visual Studio Code, seguiremos los siguientes pasos:
-                        </p>
-                        <ol>
-                            <li>Abriremos Visual Studio Code</li>
-                            <li>
-                                Crearemos una nueva carpeta con los archivos que queramos agregar a nuestro repositorio
-                            </li>
-                            <li>
-                                Abriremos la terminal. En Visual Studio Code, podemos hacerlo con el atajo <code>Ctrl + ñ</code>
-                            </li>
-                            <li>Escribiremos el comando <code>git init</code></li>
-                            <li>
-                                Con esto ya tendremos nuestro repositorio local, aunque nos falta enlazarlo con GitHub.<br>
-                                Siguiente punto para ello.
-                            </li>
-                        </ol>
-                    </details>
-                    <details>
-                        <summary>Formar Repositorios para GitHub - Línea de Comandos</summary>
-                        <hr>
-                        <p>
-                            Lo primero de todo. Para comenzar e inicializar un repositorio en GitHub, tendremos que usar este comando.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git init
+                        <summary>Temario Comandos GitHub</summary>
+                        <details>
+                            <summary>Iniciales</summary>
+                            <hr>
+                            <h2>Inicializar Repositorio</h2>
+                            <p>
+                                Lo primero de todo. Para comenzar e inicializar un repositorio en GitHub, tendremos que usar este comando.
                             </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
-                        <p>
-                            Este comando nos servirá para inicializar nuestro repositorio local y comenzar a trabajar con él.
-                        </p>
-                        <hr>
-                        <p>
-                            Para añadir todos los archivos al repositorio, usaremos este comando.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git add .
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git init
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Este comando nos servirá para inicializar nuestro repositorio local y comenzar a trabajar con él.
                             </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
-                        <p>
-                            Para hacer el primer commit, usaremos este comando.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git commit -m "first commit"
+                            <hr>
+                            <h2>Configurar Usuario</h2>
+                            <p>
+                                Para configurar nuestro usuario, usaremos estos comandos.
                             </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
-                        <p>
-                            El siguiente comando nos servirá para enlazar nuestro repositorio local con el de GitHub.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git remote add origin https://github.com/NOMBRE_USUARIO/NOMBRE_PROYECTO.git
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git config --global user.name "Nombre de Usuario"
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git config --global user.email "Correo Electrónico"
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con estos comandos, configuraremos nuestro usuario y correo electrónico para que GitHub pueda identificarnos.
                             </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
-                        <p>
-                            Por último, usaremos este comando para subir nuestro contenido al repositorio de GitHub.
-                        </p>
-                        <div class="plantillaGitHub">
-                            <p class="gitPlantilla">
-                                git push -u origin master
+                            <hr>
+                            <h2>Puntero al Repositorio Remoto de GitHub</h2>
+                            <p>
+                                Para crear un puntero al repositorio remoto, se debe utilizar el comando git remote add. 
                             </p>
-                            <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
-                        </div>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git remote add &lt;aliasRepositorio> &lt;URL>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git remote add origin https://github.com/jcarrozadev/prueba.git
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, crearemos un puntero al repositorio remoto de GitHub llamandolo <span class="destacable2">origin</span>.
+                            </p>
+                            <hr>
+                            <h2>Agregar archivos al área de Staging</h2>
+                            <p>
+                                Para añadir todos los archivos al repositorio, usaremos este comando.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git add .
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Esto nos hará añadir todos los archivos que tengamos de la carpeta al repositorio, aunque también podemos hacerlo de manera individual, agregando la <span class="destacable2">ruta específica del archivo/archivos</span>.
+                            </p>
+                            <hr>
+                            <h2>Renombrar Rama Principal</h2>
+                            <p>
+                                Para renombrar la rama principal, usaremos este comando.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git branch -M main
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, renombraremos la rama principal a <span class="destacable2">main</span>.
+                            </p>
+                            <hr>
+                            <h2>Hacer Commit</h2>
+                            <p>
+                                Para hacer el primer commit, usaremos este comando.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git commit -m "Mensaje del commit"
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Esto nos servirá para hacer el primer commit y para todos los siguientes.
+                            </p>
+                            <hr>
+                            <h2>Enlazar Repositorio Local con GitHub</h2>
+                            <p>
+                                El siguiente comando nos servirá para enlazar nuestro repositorio local con el de GitHub.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git remote add origin https://github.com/NOMBRE_USUARIO/NOMBRE_PROYECTO.git
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <hr>
+                            <h2>Subir Contenido a GitHub</h2>
+                            <p>
+                                Por último, usaremos este comando para subir nuestro contenido al repositorio de GitHub.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git push -u origin main
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                El <span class="destacable2">-u</span> se usará para la primera vez de push. Para las siguientes veces, se usará <span class="destacable2">git push &lt;nombre_remoto> &lt;nombre_rama></span>.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Ramas</summary>
+                            <hr>
+                            <h2>Ver Ramas Locales Existentes</h2>
+                            <p>
+                                Para ver las ramas locales del repositorio, se debe utilizar el comando git branch. 
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git branch
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Este comando nos servirá siempre para ver todas las ramas que tenemos activas.<br>
+                                Además, la rama activa se nos marcará con un asterisco. Tal que así: <span class="destacable3">*nombre_rama</span>
+                            </p>
+                            <hr>
+                            <h2>Crear una Rama</h2>
+                            <p>
+                                Para crear una rama, se debe utilizar el comando git branch seguido del nombre de la rama.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git branch &lt;nombre_rama>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, crearemos una rama con el nombre que le hayamos dado.
+                            </p>
+                            <hr>
+                            <h2>Renombrar Rama</h2>
+                            <p>
+                                Para renombrar una rama, se debe utilizar el comando git branch -m seguido del nombre de la rama.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git branch -m &lt;nombre_rama>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, renombraremos la rama con el nombre que le hayamos dado.
+                            </p>
+                            <hr>
+                            <h2>Eliminar Rama</h2>
+                            <p>
+                                Para eliminar una rama, se debe utilizar el comando git branch -d seguido del nombre de la rama.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git branch -d &lt;nombre_rama>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, eliminaremos la rama con el nombre que le hayamos dado.
+                            </p>
+                            <hr>
+                            <h2>Cambiar de Rama</h2>
+                            <p>
+                                Para cambiar de rama, se debe utilizar el comando git checkout seguido del nombre de la rama.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git checkout &lt;nombre_rama>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, cambiaremos a la rama con el nombre que le hayamos dado.
+                            </p>
+                            <hr>
+                            <h2>Crear y Cambiar a una Rama</h2>
+                            <p>
+                                Para crear y cambiar a una rama, se debe utilizar el comando git checkout -b seguido del nombre de la rama.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git checkout -b &lt;nombre_rama>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Con esto, crearemos y cambiaremos a la rama con el nombre que le hayamos dado.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Comandos de Uso Frecuentes</summary>
+                            <hr>
+                            <h2>Ver Estado de Archivos</h2>
+                            <p>
+                                Para ver el estado de los archivos, se debe utilizar el comando git status.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git status
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Este comando nos servirá para ver el estado de los archivos que tenemos en nuestro repositorio.
+                            </p>
+                            <hr>
+                            <h2>Ver Historial de Commits</h2>
+                            <p>
+                                Para ver el historial de commits, se debe utilizar el comando git log.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git log
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Este comando nos servirá para ver el historial de commits que hemos hecho en nuestro repositorio.<br>
+                                Además, podemos añadirle el parámetro <span class="destacable2">--oneline</span> para verlo de manera más resumida.
+                            </p>
+                            <hr>
+                            <h2>Ver Diferencias entre Archivos</h2>
+                            <p>
+                                Para ver las diferencias entre archivos, se debe utilizar el comando git diff.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git diff
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Este comando nos servirá para ver las diferencias entre los archivos que tenemos en nuestro repositorio.
+                            </p>
+                            <hr>
+                            <h2>Descartar Cambios en Archivos</h2>
+                            <p>
+                                Para descartar los cambios en los archivos, se debe utilizar el comando git checkout seguido del nombre del archivo.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git checkout &lt;nombre_archivo>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Este comando nos servirá para descartar los cambios que hayamos hecho en un archivo.
+                            </p>
+                            <hr>
+                            <h2>Eliminar Archivos del Repositorio</h2>
+                            <p>
+                                Para eliminar archivos del repositorio, se debe utilizar el comando git rm seguido del nombre del archivo.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git rm &lt;nombre_archivo>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Servirá algunas veces, ya que la forma más fácil es la manual. Pero viene bien saberlo.
+                            </p>
+                            <hr>
+                            <h2>Eliminar Archivos del Repositorio y del Sistema</h2>
+                            <p>
+                                Para eliminar archivos del repositorio y del sistema, se debe utilizar el comando git rm -f seguido del nombre del archivo.
+                            </p>
+                            <div class="plantillaGitHub">
+                                <p class="gitPlantilla">
+                                    git rm -f &lt;nombre_archivo>
+                                </p>
+                                <button class="copiarPlantilla" onclick="copiarContenido()"><img src="assets/img/copiar.svg" alt="Copiar al portapapeles"></button>
+                            </div>
+                            <p>
+                                Este comando nos servirá para eliminar archivos del repositorio y del sistema.
+                            </p>
+                        </details>
                     </details>
                 </article>
             </section>
@@ -176,6 +428,6 @@
             Desarrollado por Javier Arias Carroza
         </footer>
 
-        <script src=assets/js/copiar.js></script>
+        <script src=./assets/js/copiar.js></script>
     </body>
 </html>

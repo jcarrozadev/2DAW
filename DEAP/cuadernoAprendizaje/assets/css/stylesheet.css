@@ -45,6 +45,28 @@ hr {
     font-weight: 800;
 }
 
+.destacable2 {
+    color: rgb(255, 209, 209);
+    text-decoration: underline;
+    font-weight: 800;
+}
+
+.destacable3 {
+    color: rgb(134, 231, 134);
+    /* text-decoration: underline; */
+}
+
+details > h2 {
+    color: var(--titulo);
+    font-weight: 800;
+    font-size: large;
+}
+
+details > h2:hover {
+    transform: scale(1.009);
+    transition: all 0.3s;
+}
+
 /* Contenedor inicial */
 
 .contenedorInicial {
@@ -86,7 +108,26 @@ hr {
     border-radius: 4px;
 }
 
+.contenedorTemario > article > details:hover {
+    background-color: rgba(48, 110, 210, 0.556);
+    transform: scale(1.005);
+    transition: all 0.3s;
+}
+
 .contenedorTemario > article > details > summary {
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.contenedorTemario > article > details > details {
+    margin: 1% 0;
+    background-color: var(--principal);
+    color: #eceff1;
+    padding: 1%;
+    border-radius: 4px;
+}
+
+.contenedorTemario > article > details > details > summary {
     cursor: pointer;
     font-weight: 800;
 }
@@ -97,11 +138,20 @@ hr {
     padding: 1%;
 }
 
+.temario1 > article > details > details > p, .temario1 > article > details > details > div {
+    padding: 1%;
+}
+
 .temario1 > article > details > ol {
     padding: 0 3%;
 }
 
+.temario1 > article > details > details > ol {
+    padding: 0 3%;
+}
+
 .plantillaGitHub {
+    margin: 0.5% 0%;
     position: relative;
     background-color: lightgray;
     border-radius: 4px;
@@ -144,6 +194,7 @@ hr {
 }
 
 /* Botones estado subida archivos */
+
 .estsubidas {
     background-color: rgb(187, 187, 244);
     color: black;
@@ -183,3 +234,12 @@ hr {
 #commited {
     color: #c0b449;
 }
+
+/* Contenedor de Pasos Ordenados de tener Git en Ide */
+
+#pasosRepositorioIDE {
+    padding: 2%;
+    background-color: #e0e0e0;
+    color: black;
+}
+
