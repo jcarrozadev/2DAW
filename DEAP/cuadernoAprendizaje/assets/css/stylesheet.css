@@ -266,3 +266,27 @@ details > h2:hover {
     color: black;
 }
 
+.buscar {
+    margin-top: 1%;
+    text-align: right;
+}
+
+.buscar > button {
+    background-color: rgb(22, 79, 171);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5% 1%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.buscar > button:hover {
+    background-color: rgb(73, 130, 221);
+}
+
+.buscar > input[type=text] {
+    padding: 0.2% 0.5%;
+    border-radius: 4px;
+    border: 1px solid var(--principal);
+}
