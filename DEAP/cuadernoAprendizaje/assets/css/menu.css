@@ -232,7 +232,7 @@ html body{
 
     .cajasTem {
         width: 50vw; /* Ajustar el ancho de las tarjetas */
-        height: 10vh; /* Altura ajustada de las tarjetas */
+        height: 12vh; /* Altura ajustada de las tarjetas */
     }
 
     .cajasTem > h1 {
@@ -240,9 +240,9 @@ html body{
     }
 
     .cajasTem > button {
-        font-size: 1.3rem; /* Tamaño del texto de los botones */
+        font-size: 1.5rem; /* Tamaño del texto de los botones */
         padding: 2%;
-        height: 7vh; /* Altura del botón adaptada */
+        height: 3vh; /* Altura del botón adaptada */
     }
 }
 
