@@ -206,18 +206,33 @@ html body{
     }
 
     #titulo {
-        font-size: 7vw; /* Ajuste del tamaño del título principal */
+        font-size: 9vw; /* Ajuste del tamaño del título principal */
+    }
+
+
+    .principal {
+        margin: 0;
+        width: 10vw;
     }
 
     .sec {
-        grid-template-columns: 1fr; /* Mostrar las tarjetas en una sola columna */
-        padding: 10px;
+        width: 30%;
+        margin: 0 auto;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5px;
+    }
+
+    .slide:nth-child(1){
+        grid-template-columns: repeat(1, 1fr);
+        min-width: 100vw;
+        min-height: 100vh;
     }
 
     .cajasTem {
-        width: 80vw; /* Ancho de las tarjetas adaptado a pantallas más pequeñas */
-        height: auto; /* Ajuste de la altura de las tarjetas */
-        padding: 20px; /* Reducir el padding */
+        width: 50vw; /* Ajustar el ancho de las tarjetas */
+        height: 10vh; /* Altura ajustada de las tarjetas */
     }
 
     .cajasTem > h1 {
@@ -225,8 +240,9 @@ html body{
     }
 
     .cajasTem > button {
-        font-size: 1rem; /* Tamaño del texto de los botones */
-        height: 5vh; /* Altura del botón adaptada */
+        font-size: 1.3rem; /* Tamaño del texto de los botones */
+        padding: 2%;
+        height: 7vh; /* Altura del botón adaptada */
     }
 }
 
@@ -238,17 +254,22 @@ html body{
     }
 
     #titulo {
-        font-size: 8vw; /* Ajustar el tamaño del título */
+        font-size: 9vw; /* Ajustar el tamaño del título */
+    }
+
+    .principal {
+        margin: 0;
+        width: 2vw;
     }
 
     .sec {
-        grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
+        grid-template-columns: repeat(2, 1fr); /* 3 tarjetas por fila */
         padding: 20px;
     }
 
     .cajasTem {
-        width: 60vw; /* Ajustar el ancho de las tarjetas */
-        height: 25vh; /* Altura ajustada de las tarjetas */
+        width: 40vw; /* Ajustar el ancho de las tarjetas */
+        height: 20vh; /* Altura ajustada de las tarjetas */
     }
 
     .cajasTem > h1 {
