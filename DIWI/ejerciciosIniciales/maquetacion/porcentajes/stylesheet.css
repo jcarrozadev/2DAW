@@ -1,0 +1,101 @@
+/* Javier Arias Carroza - Ejercicio Maquetación */
+
+/* La altura (height) ocupa los bordes también, habría que restarlos */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%; /* Ajustado a la ventana */
+}
+
+/* Cuerpo */
+body {
+    margin: 3.57% 0px; /* 45px de margen es el 3.57% de 1260px */
+    background-color: bisque;
+    width: 100%; /* El cuerpo ocupa el 100% del ancho disponible */
+    height: 100%; /* Esto permitirá que el body se ajuste a la altura del contenido */
+}
+
+/* Main */
+main {
+    width: 100%; /* 1260px ancho completo de la ventana */
+    height: 200vh; /* Altura extendida para el scroll */
+    background-color: burlywood;
+    display: flow-root;
+}
+
+/* Caja primera */
+div:nth-of-type(1) {
+    width: 61.9%; /* 780px es el 61.9% de 1260px */
+    height: 68%; /* 340px es el 68% de 500px */
+    background-color: cadetblue;
+    float: left;
+    padding: 6% 0.79%; /* 30px y 10px ajustados a porcentajes */
+    margin: 0px 1.58%; /* 20px de margen ajustado a 1.58% */
+}
+
+/* Caja segunda */
+div:nth-of-type(2) {
+    width: 29.36%; /* 370px es el 29.36% de 1260px */
+    height: 60%; /* 300px es el 60% de 500px */
+    background-color: azure;
+    padding: 10% 0px 10% 2.38%; /* 50px a la izquierda es el 2.38% de 1260px */
+    float: left;
+}
+
+/* Elementos de caja segunda */
+
+#cajasegunda > div {
+    width: 40%; /* Mantengo el 40% ya que es un porcentaje relativo */
+    height: 80%;
+}
+
+#cajasegunda > div > #stk {
+    position: sticky;
+    top: 0;
+}
+
+img {
+    width: 11.9%; /* 150px es el 11.9% de 1260px */
+    height: auto;
+}
+
+/** Formulario & elementos **/
+
+form {
+    margin-top: 7.14%; /* 4em convertido a 7.14% de altura */
+    padding: 1em 0 1em 5.55%; /* 70px de padding izquierdo es el 5.55% de 1260px */
+    border: 1px solid black;
+    background-color: lightcoral;
+}
+
+form input[type="text"] {
+    display: block;
+    width: 38.88%; /* 490px es el 38.88% de 1260px */
+    padding-left: 0.79%; /* 10px de padding izquierdo es el 0.79% */
+    height: 1.8em;
+    margin: 1em 0;
+}
+
+form input[type="submit"] {
+    background-color: #D8D8D8;
+    width: 11.9%; /* 150px es el 11.9% de 1260px */
+    border: none;
+    border-radius: 2px;
+    height: 2em;
+}
+
+form input[type="submit"]:hover {
+    background-color: #b6b5b5;
+}
+
+/* Footer */
+footer {
+    width: 100%; /* 1260px es el 100% del ancho disponible */
+    height: 20%; /* 100px es el 20% de 500px */
+    background-color: aquamarine;
+    clear: both;
+}
