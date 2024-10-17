@@ -1,0 +1,121 @@
+/* Javier Arias Carroza - Ejercicio Maquetación */
+
+/* La altura (height) ocupa los bordes también, habría que restarlos */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 1260px;
+}
+
+/* Cuerpo */
+body {
+    margin: 45px 0px;
+    background-color: bisque;
+    width: 1260px;
+    height: 500px;
+}
+
+/* Main */
+main {
+    width: 1260px;
+    /* height: 400px; */
+    background-color: burlywood;
+    display: flow-root; /* Forma nueva de overflow:hidden */
+    /* overflow: hidden; */
+}
+
+/* Caja primera */
+div:nth-of-type(1) {
+    width: 780px; /* 800px - 20px de padding (10+10) */
+    height: 340px; /* 400px - 60px de padding (30+30) */
+    background-color: cadetblue;
+    float: left;
+    padding: 30px 10px;
+    margin: 0px 20px;
+}
+
+/* Caja segunda */
+div:nth-of-type(2) {
+    width: 370px; /* 400px - 30px de padding */
+    height: 300px; /* 400px - 100px de padding (50+50) */
+    background-color: azure;
+    padding: 50px 0px 50px 30px;
+    float: left;
+}
+
+/* Hacer que los divs parent (padres) tengan posición relativa para que los elementos absolutos se posicionen dentro */
+div:nth-of-type(1), div:nth-of-type(2) {
+    position: relative;
+}
+
+/* Posicionamiento en la caja de la izquierda */
+#pos1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    border: 1px solid black;
+    z-index: 10;
+}
+
+/* Posicionamiento en la caja de la derecha */
+#pos2 {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    font-size: 1.2em;
+    z-index: 10;
+}
+
+/* Elementos de caja segunda */
+
+img {
+    width:150px;
+}
+
+/** Formulario & elementos **/
+
+form {
+    margin-top: 4em;
+    padding: 1em 0 1em 70px;
+    border: 1px solid black; /* Borde para saber lo que ocupa el formulario*/
+    background-color: lightcoral;
+}
+
+form input[type="text"] {
+    display: block; /* Para hacerlos bloques y que se pongan uno debajo de otro*/
+    width: 490px; /* 500px - 10px de padding */
+    padding-left: 10px;
+    height: 1.8em;
+    margin: 1em 0;
+}
+
+form input[type="submit"] {
+    background-color: #D8D8D8;
+    width: 146px; /* 150px - 4px de borde (derecha izquierda) */
+    border: none;
+    border-radius: 2px;
+    height: 2em;
+}
+
+form input[type="submit"]:hover {
+    background-color: #b6b5b5;
+}
+
+/* Footer */
+footer {
+    width: 1260px;
+    height: 100px;
+    background-color: aquamarine;
+    clear: both;
+}
+
