@@ -209,7 +209,6 @@ html body{
         font-size: 9vw; /* Ajuste del tamaño del título principal */
     }
 
-
     .principal {
         margin: 0;
         width: 10vw;
@@ -232,7 +231,7 @@ html body{
 
     .cajasTem {
         width: 50vw; /* Ajustar el ancho de las tarjetas */
-        height: 12vh; /* Altura ajustada de las tarjetas */
+        height: fit-content; /* Altura ajustada de las tarjetas */
     }
 
     .cajasTem > h1 {
