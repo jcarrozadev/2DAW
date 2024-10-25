@@ -1,3 +1,7 @@
+/**
+ * 6. Elaborar una función que reciba tres enteros y retorne el promedio
+ */
+
 window.addEventListener('load', () => {
 
     function promedioEnteros(num1,num2,num3) {

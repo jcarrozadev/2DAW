@@ -1,3 +1,8 @@
+/**
+ * 8. Confeccionar un programa que muestre en que cuatrimestre del año nos
+    encontramos. Para esto obtener el mes.
+ */
+
 window.addEventListener('load', () => {
 
     let cuatri = parseInt(prompt("Introduce número de mes:"));

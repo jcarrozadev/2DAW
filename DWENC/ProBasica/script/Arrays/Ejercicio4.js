@@ -1,3 +1,9 @@
+/**
+ * 4. Realizar un programa que pida la carga de dos vectores numéricos. Obtener la
+    suma de los dos vectores, dicho resultado guardarlo en un tercer vector del
+    mismo tamaño. Sumar componente a componente.
+ */
+
 window.addEventListener('load', () => {
     
     let array1 = [];

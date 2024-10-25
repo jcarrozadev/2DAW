@@ -1,3 +1,8 @@
+/**
+ * 7. Confeccionar una función que solicite la carga de 5 valores por teclado y
+    retorne su suma
+ */
+
 window.addEventListener('load', () => {
 
     let suma = 0;
