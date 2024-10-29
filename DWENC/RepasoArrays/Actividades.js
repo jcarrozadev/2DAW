@@ -168,7 +168,7 @@ let actividad5 = () => {
 
 let actividad6 = () => {
 
-    let jugadorMasAsistencias = futbolistas[0];
+    let jugadorMasAsistencias = futbolistas[0]; // Objeto completo
 
     for ( let i = 1; i < futbolistas.length; i++ ) {
 
@@ -178,7 +178,7 @@ let actividad6 = () => {
 
     }
 
-    console.log(jugadorMasAsistencias.nombre);
+    console.log("El jugador con más asistencias es "+jugadorMasAsistencias.nombre);
 
 };
 
@@ -192,6 +192,7 @@ let actividad7 = () => {
 
     for (let i = 0; i < futbolistas.length; i++) {
 
+        // En caso de que la posición aún no esté creada, la tiene que crear para poder hacer push e introducir datos dentro
         if (!nombresPosicion[futbolistas[i].posicion]) {
             nombresPosicion[futbolistas[i].posicion] = [];
         }
