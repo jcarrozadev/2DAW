@@ -1,0 +1,20 @@
+Apache es Modular
+
+Para instalar módulos:
+    - a2enmod php
+    - a2dismod php
+Cuando instalamos el módulo, es para todo el contexto Servidor, luego en Virtual Host se dice si lo vas a utilizar o no.
+
+Contextos Apache - Tiene 4
+    - Contexto Servidor
+    - Contexto Virtual Host 
+    - Contexto Directory
+    - Contexto .htaccess -> Es un fichero de configuración que en función de donde se encuentre afectará al Virtual Host o a un directorio en 
+                            concreto.
+    
+    Esto tiene Herencia. Todo lo que configure afecta a todos los contextos. 
+    Todas las directivas son jerárquicas.
+
+Estructuras APACHE - /var/www
+
+Ejercicio en Diario de Aprendizaje
