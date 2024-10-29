@@ -130,16 +130,77 @@ let actividad3 = () => {
  *      Actividad 4       *
  **************************/
 
-let actividad4 = () => {
+let actividad4 = futbolistas.reduce((total,futbolista) => {
+    let equipo = futbolista.equipo;
 
-    // let rojas = 0;
-    // let amarillas = 0;
+    if(!total[equipo])
+        total[equipo] = {
+            tarjetasAmarillas : 0,
+            tarjetasRojas: 0
+        };
 
-    // futbolistas.forEach(futbolista => {
-    //     if (futbolista.tarjetaAmarilla >= 1) {
+    total[equipo].tarjetasAmarillas += futbolista.tarjetaAmarilla;
+    total[equipo].tarjetasRojas += futbolista.tarjetaRoja;
 
-    //     }
-    // });
+    return total;
+});
+
+/**************************
+ *      Actividad 5       *
+ **************************/
+
+let actividad5 = () => {
+
+    let mediaGoles = [];
+
+    for (let i = 0 ; i < futbolistas.length; i++) {
+
+        mediaGoles[futbolistas[i].nombre] = futbolistas[i].goles / futbolistas[i].partidosJugados;
+
+    }
+
+    console.log(mediaGoles);
+};
+
+/**************************
+ *      Actividad 6       *
+ **************************/
+
+let actividad6 = () => {
+
+    let jugadorMasAsistencias = futbolistas[0];
+
+    for ( let i = 1; i < futbolistas.length; i++ ) {
+
+        if ( futbolistas[i].asistencias > jugadorMasAsistencias.asistencias ) {
+            jugadorMasAsistencias = futbolistas[i];
+        }
+
+    }
+
+    console.log(jugadorMasAsistencias.nombre);
+
+};
+
+/**************************
+ *      Actividad 7       *
+ **************************/
+
+let actividad7 = () => {
+
+    let nombresPosicion = [];
+
+    for (let i = 0; i < futbolistas.length; i++) {
+
+        if (!nombresPosicion[futbolistas[i].posicion]) {
+            nombresPosicion[futbolistas[i].posicion] = [];
+        }
+
+        nombresPosicion[futbolistas[i].posicion].push(futbolistas[i].nombre);
+
+    }
+
+    console.log(nombresPosicion);
 
 };
 
@@ -147,4 +208,6 @@ let actividad4 = () => {
  *        Ejecución       *
  **************************/
 
-actividad3();
+actividad7();
+
+//console.log(actividad4);
