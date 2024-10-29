@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horario 2DAW</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .schedule-container {
+        border: 1px solid #333;
+        width: 80%;
+        text-align: center;
+    }
+    h2 {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 0;
+        margin: 0;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .row-odd {
+        background-color: #f2f2f2;
+    }
+    .subject {
+        font-weight: bold;
+    }
+    .professor {
+        font-size: 0.9em;
+        color: #555;
+    }
+    .strikethrough {
+        text-decoration: line-through;
+        color: #a9a9a9;
+    }
+</style>
+</head>
+<body>
+
+<div class="schedule-container">
+    <h2>Horario de 2DAW</h2>
+    <table>
+        <tr>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+        </tr>
+        <tr class="row-odd">
+            <td>1</td>
+            <td><span class="subject strikethrough">EIE</span><br><span class="professor">ARL</span></td>
+            <td><span class="subject">DEAPW</span><br><span class="professor">GTE</span></td>
+            <td><span class="subject">DWENC</span><br><span class="professor">BDA</span></td>
+            <td><span class="subject">DEAPW</span><br><span class="professor">GTE</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><span class="subject strikethrough">EIE</span><br><span class="professor">ARL</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject">DWENC</span><br><span class="professor">BDA</span></td>
+            <td><span class="subject">DEAPW</span><br><span class="professor">GTE</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+        </tr>
+        <tr class="row-odd">
+            <td>3</td>
+            <td><span class="subject">DIWAI</span><br><span class="professor">MDI, BDA</span></td>
+            <td><span class="subject">DIWI</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject">DIWA</span><br><span class="professor">BDA</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject">TUTORÍA</span><br><span class="professor">GTE</span></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject">DIWA</span><br><span class="professor">BDA</span></td>
+        </tr>
+        <tr class="row-odd">
+            <td>5</td>
+            <td><span class="subject">DEAPW</span><br><span class="professor">GTE</span></td>
+            <td><span class="subject">DWENC</span><br><span class="professor">BDA</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject">DWENC</span><br><span class="professor">BDA</span></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><span class="subject">DEAPW</span><br><span class="professor">GTE</span></td>
+            <td><span class="subject">DWENC</span><br><span class="professor">BDA</span></td>
+            <td><span class="subject">DWENS</span><br><span class="professor">MDI</span></td>
+            <td><span class="subject strikethrough">EIE</span><br><span class="professor">ARL</span></td>
+            <td><span class="subject">DWENC</span><br><span class="professor">BDA</span></td>
+        </tr>
+        <tr class="row-odd">
+            <td>7</td>
+            <td><span class="subject">DWENC</span><br><span class="professor">BDA</span></td>
+            <td colspan="4"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
