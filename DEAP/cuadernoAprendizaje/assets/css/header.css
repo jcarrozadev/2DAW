@@ -33,13 +33,13 @@ header > .logo, header > .fotoPerfil > img {
     cursor: pointer;
 }
 
-header > .logo > img {
+header > .logo > a > img {
     width: auto;
     height: 5vh;
     transition: all 0.3s;
 }
 
-header > .logo > img:hover, header > .fotoPerfil > img:hover  {
+header > .logo > a > img:hover, header > .fotoPerfil > img:hover  {
     transform: scale(1.2);
 }
 
