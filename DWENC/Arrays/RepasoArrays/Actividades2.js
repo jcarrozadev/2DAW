@@ -120,7 +120,7 @@ const numeroPersonas = () => {
     console.log(objPersonas);
 } 
 
-numeroPersonas();
+//numeroPersonas();
 
 /**
  *  9. Obtener el objeto de persona con mayor edad y mostrar su nombre, edad y ciudad
@@ -145,3 +145,13 @@ const mayorEdad = () => {
  * 10. Comprobar si todas las personas son mayores de 20 años y mostrar un mensaje por pantalla ("Son mayores de 20") en caso de que sea cierto.
  */
 
+const personasMayores20 = () => {
+
+    // El every hará que si todas las personas cumplen la condicion, devolverá true
+    
+    if ( personas.every(persona => persona.edad > 20) ) {
+        console.log("Todos son mayores de 20");
+    }
+}
+
+//personasMayores20();
