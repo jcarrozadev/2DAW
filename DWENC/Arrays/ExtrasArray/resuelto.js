@@ -186,17 +186,33 @@ const listarRivalesJugador = () => {
 
 const promedioAmarillasPorJugador = futbolistas.map(jugador => {
 
-    const totalAmarillas = jugador.partidosJugados.reduce((total, partido) => total + (partido.tarjetaAmarilla ? 1 : 0), 0);
+    const totalAmarillasJugador = jugador.partidosJugados.reduce((total,partido) => total + (partido.tarjetaAmarilla) ? 1 : 0, 0);
 
-    const promedio = totalAmarillas / jugador.partidosJugados.length;
+    const promedioJugador = totalAmarillasJugador / jugador.partidosJugados.length;
 
-    return { 
-        nombre: jugador.nombre, 
-        promedioAmarillas: promedio 
-    };
-});
+    return {
+        nombre: jugador.nombre,
+        promedio: promedioJugador
+    }
 
-console.log(promedioAmarillasPorJugador);
+})
+
+function act4(){ //Alberto
+
+    for(let i = 0; i < futbolistas.length; i++){
+        let contadorAmarilla = 0;
+        for(let j = 0; j < futbolistas[i].partidosJugados.length; j++){
+            if(futbolistas[i].partidosJugados[j].tarjetaAmarilla){
+                contadorAmarilla++;
+            }
+        }
+        console.log("El promedio de amarillas del jugador " + futbolistas[i].nombre + " es " + contadorAmarilla/futbolistas[i].partidosJugados.length);
+    }
+}
+
+//act4();
+
+//console.log(promedioAmarillasPorJugador);
 
 /**
  * ACT 5 - EXTRA: Contar los jugadores con al menos un gol en todos sus partidos: Filtra los jugadores que hayan anotado al menos un gol en cada uno de sus partidos.
