@@ -1,0 +1,318 @@
+/* Javier Arias Carroza */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.0rem;
+}
+
+h1 {
+    font-size: xxx-large;
+    color: rgb(63, 110, 221);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: large;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#contenedorAsideMain {
+    display: flex;
+    align-items: stretch; /* Asegura que aside y main tengan la misma altura */
+}
+
+aside {
+    background-color: rgb(67, 140, 209);
+    width: 16%;
+    padding: 2%;
+    border: 2px solid rgb(81, 81, 81);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.271);
+    float: left;
+    display: flex;
+    flex-direction: column; /* Para que los elementos estén en columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+    justify-content: flex-start; /* Ajusta la posición en la vertical (opcional) */
+    gap: 1.5%; /* Espacio entre elementos */
+    margin: 0.5%;
+}
+
+/************************
+*     Botones Aside     *
+*************************/
+
+aside > button {
+    display: block;
+    background-color: rgb(250, 196, 48);
+    padding: 2%;
+    width: 80%;
+    height: fit-content;
+    border-radius: 4px;
+    align-content: center;
+}
+
+aside > button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.311);
+    transition: all 0.3s;
+}
+
+main {
+    background-color: rgb(152, 210, 255);
+    float: right;
+    width: 82%;
+    border: 2px solid rgb(81, 81, 81);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.271);
+    margin: 0.5%;
+}
+
+/************************
+*  Barra de navegación  *
+*************************/
+
+#inicio {
+    background-color: rgb(63, 110, 221);
+    padding: 1%;
+    border-radius: 4px;
+}
+
+#inicio a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#inicio:hover {
+    box-shadow: 0px 0px 10px rgba(61, 117, 222, 0.533);
+    transition: all 0.3s;
+}
+
+/************************
+*  Contenido Prinicpal  *
+*************************/
+
+#contenidoPrincipal {
+    margin: 1% 0%;
+    border: 1px solid black;
+}
+
+/************************
+*       Navegación      *
+*************************/
+
+main > nav {
+    background-color: rgb(67, 140, 209);
+    padding: 1%;
+}
+
+/************************
+*   Contenedor Inicial  *
+*************************/
+
+
+.contenedorInicial {
+    padding: 1%;
+    display: flex; /* Hace que los elementos hijos se comporten como flex-items */
+}
+
+.contenedorInicial > div:nth-of-type(1) {
+    width: 30%;
+}
+
+.contenedorInicial > div:nth-of-type(2) {
+    padding: 1%;
+    width: 70%;
+    align-content: center;
+}
+
+.contenedorInicial > div:nth-of-type(1) > figure > img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--principal);
+}
+
+.contenedorInicial > div:nth-of-type(1) > figure > figcaption {
+    text-align: center;
+}
+
+/************************
+*         Unidad        *
+*************************/
+
+.contenedorTemario {
+    padding: 2%;
+}
+
+.contenedorTemario > details {
+    background-color: rgb(67, 140, 209);
+    margin: 1% 0%;
+    padding: 1%;
+    border-radius: 4px;
+}
+
+.contenedorTemario > details:hover {
+    cursor: pointer;
+    background-color: rgba(48, 110, 210, 0.556);
+    transform: scale(1.005);
+    transition: all 0.3s;
+}
+
+.contenedorTemario > details > summary {
+    color: #eceff1;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.contenedorTemario > details > details {
+    margin: 1% 0;
+    background-color: rgb(56, 120, 180);
+    color: #eceff1;
+    padding: 1%;
+    border-radius: 4px;
+}
+
+.contenedorTemario > details > details > summary {
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.temario1 > details > p, .temario1 > details > div {
+    padding: 1%;
+}
+
+.temario1 > details > details > p, .temario1 > details > details > div {
+    padding: 1%;
+}
+
+.temario1 > details > ol {
+    padding: 0 3%;
+}
+
+.temario1 > details > details > ol {
+    padding: 0 3%;
+}
+
+
+.plantillaGitHub {
+    margin: 0.5% 0%;
+    position: relative;
+    background-color: lightgray;
+    border-radius: 4px;
+    color: #000000;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.plantillaGitHub:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.copiarPlantilla {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.6% 1% 0% 1%;
+    padding: 0.3% 0.2% 0% 0.2%;
+    background-color: rgb(175, 175, 175);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.copiarPlantilla:hover {
+    transform: scale(1.1);
+}
+
+.gitPlantilla {
+    display: block;
+}
+
+.locked {
+    color: rgb(184, 0, 0);
+    font-weight: bold;
+}
+
+.locked:hover {
+    color: rgb(231, 38, 38);
+}
+
+/* Botones estado subida archivos */
+
+.estsubidas {
+    background-color: rgb(187, 187, 244);
+    color: black;
+    width: fit-content;
+    display: inline-block;
+    margin: 0.5%;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.estsubidas:hover {
+    background-color: rgba(126, 173, 245, 0.771);
+    transition: all 0.3s;
+    transform: scale(1.02);
+}
+
+.subidas {
+    font-weight: bold;
+}
+
+#untracked {
+    color: gray;
+}
+
+#added {
+    color: rgb(85, 161, 85);
+}
+
+#modified {
+    color: #653579;
+}
+
+#staged {
+    color: #5b9696;
+}
+
+#commited {
+    color: #c0b449;
+}
+
+/* Contenedor de Pasos Ordenados de tener Git en Ide */
+
+#pasosRepositorioIDE {
+    padding: 2%;
+    background-color: #e0e0e0;
+    color: black;
+}
+
+.buscar {
+    margin-top: 1%;
+    text-align: right;
+}
+
+.buscar > button {
+    background-color: rgb(22, 79, 171);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5% 1%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.buscar > button:hover {
+    background-color: rgb(73, 130, 221);
+}
+
+.buscar > input[type=text] {
+    padding: 0.2% 0.5%;
+    border-radius: 4px;
+    border: 1px solid var(--principal);
+}
