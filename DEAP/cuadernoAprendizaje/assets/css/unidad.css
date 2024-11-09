@@ -1,6 +1,21 @@
 /* Javier Arias Carroza */
 
+/**
+ *
+ * Este CSS sirve para unidad*.html
+ *
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --uno: rgb(67, 140, 209);
+    --dos: #0097b2;
+    --tres: #b0c0d6;
+    --cuatro: #ff8f1b;
+    --cinco: #c9d6ed;
+    --evg: rgb(8,100,148);
+}
 
 * {
     box-sizing: border-box;
@@ -10,9 +25,13 @@
     font-size: 1.0rem;
 }
 
+body {
+    background-color: var(--cinco);
+}
+
 h1 {
     font-size: xxx-large;
-    color: rgb(63, 110, 221);
+    color: var(--uno); /* rgb(63, 110, 221) */
     text-align: center;
     margin-bottom: 0;
 }
@@ -29,7 +48,8 @@ h3 {
 }
 
 aside {
-    background-color: rgb(67, 140, 209);
+    background-color: var(--evg);
+    color: white;
     width: 16%;
     padding: 2%;
     border: 2px solid rgb(81, 81, 81);
@@ -49,7 +69,7 @@ aside {
 
 aside > button {
     display: block;
-    background-color: rgb(250, 196, 48);
+    background-color: var(--tres);
     padding: 2%;
     width: 80%;
     height: fit-content;
@@ -63,33 +83,12 @@ aside > button:hover {
 }
 
 main {
-    background-color: rgb(152, 210, 255);
+    background-color: var(--cinco);
     float: right;
     width: 82%;
     border: 2px solid rgb(81, 81, 81);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.271);
     margin: 0.5%;
-}
-
-/************************
-*  Barra de navegación  *
-*************************/
-
-#inicio {
-    background-color: rgb(63, 110, 221);
-    padding: 1%;
-    border-radius: 4px;
-}
-
-#inicio a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#inicio:hover {
-    box-shadow: 0px 0px 10px rgba(61, 117, 222, 0.533);
-    transition: all 0.3s;
 }
 
 /************************
@@ -106,8 +105,45 @@ main {
 *************************/
 
 main > nav {
-    background-color: rgb(67, 140, 209);
+    position: relative;
+    background-color: var(--evg);
     padding: 1%;
+}
+
+main > nav > .separador {
+    display: inline;
+    margin-right: 65%;
+}
+
+main > nav > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+main > nav > ul {
+    display: inline-block;
+    list-style: none;
+    vertical-align: middle;
+}
+
+main > nav > ul > li {
+    display: inline;
+}
+
+/************************
+*         Logo          *
+*************************/
+
+nav > a > img {
+    margin-left: 1%;
+    cursor: pointer;
+    width: auto;
+    height: 5vh;
+    transition: all 0.3s;
+}
+
+nav>  a > img:hover {
+    transform: scale(1.2);
 }
 
 /************************
@@ -157,7 +193,7 @@ main > nav {
 
 .contenedorTemario > details:hover {
     cursor: pointer;
-    background-color: rgba(48, 110, 210, 0.556);
+    background-color: rgb(48, 110, 210);
     transform: scale(1.005);
     transition: all 0.3s;
 }
@@ -170,7 +206,7 @@ main > nav {
 
 .contenedorTemario > details > details {
     margin: 1% 0;
-    background-color: rgb(56, 120, 180);
+    background-color: var(--cuatro);
     color: #eceff1;
     padding: 1%;
     border-radius: 4px;
