@@ -19,8 +19,12 @@
 }
 
 :root {
-    --color-gris: #333333;
+    --color-azul: rgb(50, 173, 255);
+    --color-gris: #303030;
     --color-gris-claro: #656565;
+    --color-tarjeta: #3a3a3a;
+    --color-bordes: #555;
+    --color-git: #ff5722;
 }
 
 * {
@@ -33,4 +37,56 @@ html {
     color: white;
     text-align: center;
     background-color: var(--color-gris);
+    scroll-behavior: smooth;
+
+    scrollbar-face-color: #646464;
+    scrollbar-base-color: #646464;
+    scrollbar-3dlight-color: #646464;
+    scrollbar-highlight-color: #646464;
+    scrollbar-track-color: #000;
+    scrollbar-arrow-color: #000;
+    scrollbar-shadow-color: #646464;
+    scrollbar-dark-shadow-color: #646464;
+}
+  
+::-webkit-scrollbar { width: 8px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: #666; }
+::-webkit-scrollbar-track {  background-color: #646464;}
+::-webkit-scrollbar-track-piece { background-color: #000;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #646464;}
+::-webkit-resizer { background-color: #666;}
+
+/***************************************************
+*             Selectores Principales               *
+***************************************************/
+
+h1 {
+    font-family: neueExtraBold;
+    font-size: 3rem;
+    position: relative;
+    display: inline-block; /* Esto asegura que el efecto subrayado no se extienda más allá del texto */
+    cursor: pointer; /* Añade un cursor de puntero para enfatizar la interactividad */
+}
+
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Puedes ajustar el grosor de la línea */
+    transition: width 0.5s ease-in-out; /* Controla la duración y el estilo de la animación */
+}
+
+h1:hover::after, h2:hover::after {
+    width: 100%; /* La línea se extiende a lo largo de todo el texto al hacer hover */
+}
+
+h2 {
+    font-family: neueExtraBold;
+    font-size: 1rem;
+    position: relative;
+    display: inline-block; /* Esto asegura que el efecto subrayado no se extienda más allá del texto */
+    cursor: pointer; /* Añade un cursor de puntero para enfatizar la interactividad */
 }

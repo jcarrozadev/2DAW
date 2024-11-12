@@ -1,10 +1,5 @@
-/***************************************************
-*             Selectores Principales               *
-***************************************************/
-
-h1 {
-    font-family: neueExtraBold;
-    font-size: 3rem;
+h1::after, h2::after {
+    background-color: #2282ff; /* Ajusta el color de la línea según el diseño */
 }
 
 /***************************************************
@@ -12,14 +7,15 @@ h1 {
 ***************************************************/
 
 .textoDestacable {
-    color: rgb(50, 173, 255);
-    text-shadow: 0px 0px 20px rgb(50, 173, 255);
+    color: var(--color-azul);
+    text-shadow: 0px 0px 20px var(--color-azul);
 }
 
 /***************************************************
 *                       Main                       *
 ***************************************************/
 
+/* Contenedor Inicial (Foto) */
 main > #contenedorInicial {
     height: 100vh;
     background-image: url("../../img/fondoInicial.jpg");
@@ -27,26 +23,129 @@ main > #contenedorInicial {
     background-size: cover;
 }
 
-main > #contenedorInicial > img {
+/* Logo  */
+main > #contenedorInicial > #logo {
     margin: 3%;
     width: 60%;
 }
 
-main > #contenedorInicial > img:hover {
+main > #contenedorInicial > #logo:hover, main > #contenedorInicial > div > img:hover {
     cursor: pointer;
     transform: scale(1.05);
     transition: all 0.5s;
 }
 
+/* Contenedor DEAP */
 main > #contenedorInicial > div {
     width: 50%;
     margin: 0 auto;
 }
 
+/* Imagen DEAP */
 main > #contenedorInicial > div > img {
     width: 28%;
 }
 
+/* Párrafo inicial */
 main > #contenedorInicial > div > p {
     margin-top: 3%;
+}
+
+/***************************************************
+*                    Tarjetas                      *
+***************************************************/
+
+/* Sección de Introducción */
+
+.introduccion-aprendizaje {
+    margin: 2% 0;
+}
+.introduccion-aprendizaje > h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.introduccion-aprendizaje > p {
+    font-size: 1rem;
+    color: #ccc;
+    text-align: center;
+}
+
+.introduccion-aprendizaje a {
+    color: var(--color-azul);
+    text-decoration: none;
+}
+
+.introduccion-aprendizaje a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de Categoría */
+
+.seccion-categoria {
+    margin: 3% 0;
+}
+.seccion-categoria > h2 {
+    border-bottom: 1px solid #444;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    color: var(--color-git);
+}
+
+/* Contenedor de Tarjetas */
+.contenedor-tarjetas {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Tarjetas */
+.contenedor-tarjetas > .tarjeta {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-bordes);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.2s ease;
+}
+
+.contenedor-tarjetas > .tarjeta:hover {
+    transform: scale(1.05);
+}
+
+.contenedor-tarjetas > .tarjeta > img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.contenedor-tarjetas > .tarjeta > h3 {
+    font-size: 1.2rem;
+    color: var(--color-git);
+    margin-bottom: 10px;
+}
+
+.contenedor-tarjetas > .tarjeta > p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.contenedor-tarjetas > .tarjeta > button {
+    background-color: var(--color-git);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.contenedor-tarjetas > .tarjeta > button:hover {
+    background-color: #c63f16;
 }
