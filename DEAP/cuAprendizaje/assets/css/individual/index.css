@@ -1,0 +1,52 @@
+/***************************************************
+*             Selectores Principales               *
+***************************************************/
+
+h1 {
+    font-family: neueExtraBold;
+    font-size: 3rem;
+}
+
+/***************************************************
+*                  Clases Útiles                   *
+***************************************************/
+
+.textoDestacable {
+    color: rgb(50, 173, 255);
+    text-shadow: 0px 0px 20px rgb(50, 173, 255);
+}
+
+/***************************************************
+*                       Main                       *
+***************************************************/
+
+main > #contenedorInicial {
+    height: 100vh;
+    background-image: url("../../img/fondoInicial.jpg");
+    background-position: center; 
+    background-size: cover;
+}
+
+main > #contenedorInicial > img {
+    margin: 3%;
+    width: 60%;
+}
+
+main > #contenedorInicial > img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+main > #contenedorInicial > div {
+    width: 50%;
+    margin: 0 auto;
+}
+
+main > #contenedorInicial > div > img {
+    width: 28%;
+}
+
+main > #contenedorInicial > div > p {
+    margin-top: 3%;
+}

@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'neueText';
+    src: url('../font/NeuePlakText-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'neueBold';
+    src: url('../font/NeuePlak-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'neueExtraBold';
+    src: url('../font/NeuePlak-ExtraBlack.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'blackrow';
+    src: url('../font/BLACKCROW-EXTRABOLD.TTF') format('truetype');
+}
+
+:root {
+    --color-gris: #333333;
+    --color-gris-claro: #656565;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: neueText;
+    color: white;
+    text-align: center;
+    background-color: var(--color-gris);
+}
