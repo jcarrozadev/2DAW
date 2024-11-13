@@ -1,0 +1,476 @@
+* {
+    box-sizing: border-box;
+}
+
+h1::after, h2::after, h3::after, h4::after {
+    background-color: var(--color-http); /* Ajusta el color de la línea según el diseño */
+}
+
+h3,h4 {
+    font-family: neueExtraBold;
+    position: relative;
+    display: inline-block; /* Esto asegura que el efecto subrayado no se extienda más allá del texto */
+    cursor: pointer; /* Añade un cursor de puntero para enfatizar la interactividad */
+}
+
+.textoDestacable {
+    color: var(--color-http);
+    text-shadow: 0px 0px 20px var(--color-http);
+}
+
+.destacable2 {
+    color: #6a9955; /* Color de los comentarios en Visual Studio */
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.225);
+}
+
+#volver {
+    background-color: #2a2a2a;
+}
+
+#volver:hover {
+    background-color: var(--color-azul);
+}
+
+.contenedor {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.filtrar-posts {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.filtrar-posts input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.filtrar-posts input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.menu {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: #333;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #444;
+    transform: scale(1.01);
+    transition: all 0.3s;
+}
+
+.contenido {
+    margin-left: 250px; /* Espacio para la sidebar */
+    padding: 30px;
+    background-color: #222;
+    color: #fff;
+    min-height: 100vh;
+    width: calc(100% - 250px); /* Asegura que ocupe todo el ancho menos el de la sidebar */
+    overflow-y: auto;
+}
+
+.contenido > * {
+    margin-bottom: 20px;
+}
+
+.introduccion h1 {
+    font-size: 2.5em;
+    color: #f39c12;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+.introduccion p {
+    font-size: 1.2em;
+    color: #ddd;
+}
+
+/* Separación y elegancia */
+.introduccion {
+    padding: 2%;
+    background: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.icono-red {
+    color: #ffffff; /* Color de los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    transition: transform 0.5s, color 0.5s;
+    opacity: 0.8;
+}
+
+.icono-red:hover {
+    transform: scale(1.3); /* Efecto de agrandamiento al pasar el cursor */
+    color: #1da1f2; /* Color al hacer hover (puedes cambiarlo al color que prefieras) */
+    transition: 0.5s;
+    opacity: 1;
+}
+
+/* Estilos de la sección de introducción con fondo */
+.introduccion-cabecera {
+    background-image: url('../../img/ut/fondos/fondoHTTPDNS.png'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.introduccion-cabecera h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.introduccion-cabecera p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+/* Sección de introducción real */
+.introduccion-real {
+    padding: 30px 20px;
+    background-color: #f9f9f9; /* Color de fondo de la introducción real */
+    border-radius: 8px;
+    margin-top: -10px; /* Hace que parezca pegado a la sección superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.introduccion-real > h2, .introduccion-real > h3 {
+    margin-top: 3%;
+}
+
+.introduccion-real > h2, .introduccion-real > details > h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+.introduccion-real > h3, .introduccion-real > details > summary > h3 {
+    font-size: 1.5em;
+    color: #696969;
+}
+
+.introduccion-real > h4, .introduccion-real > details > h4 {
+    font-size: 1.2em;
+    color: var(--color-http);
+    margin-top: 0.5%;
+}
+
+.introduccion-real > p, .introduccion-real > details > p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.listas {
+    text-align: left;
+    padding: 2%;
+    padding-left: 4%;
+    background-color: #e0e0e0;
+    color: black;
+}
+
+.layoutCajas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.tarjetasSubidas {
+    background-color: #e0e0e0;
+    color: black;
+    width: fit-content;
+    display: inline-block;
+    margin: 0.5%;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2%;
+}
+
+.tarjetasSubidas:hover {
+    background-color: #c6c4c4;
+    transition: all 0.3s;
+    transform: scale(1.02);
+}
+
+.subidas {
+    font-weight: bold;
+}
+
+#cgi {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#php {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#python {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+#java {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.plantillaGitHub {
+    margin: 0.5% 0%;
+    position: relative;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    color: #000000;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 1%;
+}
+
+.plantillaGitHub:hover {
+    background-color: #c6c4c4;
+}
+
+.copiarPlantilla {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.6% 1% 0% 1%;
+    padding: 0.3% 0.2% 0% 0.2%;
+    background-color: #c6c4c4;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.copiarPlantilla:hover {
+    transform: scale(1.1);
+}
+
+.gitPlantilla {
+    display: block;
+}
+
+details summary::before {
+    content: "+";
+    font-size: 2rem;
+    display: inline-block;
+    margin-right: 1%;
+    font-weight: bold;
+    color: var(--color-http);
+}
+
+details[open] summary::before {
+    content: "-";
+}
+
+details {
+    border: 2px solid #c6c4c4;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    padding-bottom: 1.1rem;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+details[open] > summary {
+    margin-bottom: 0.5rem;
+}
+
+.buscar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.buscar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: white;
+    margin-right: 10px;
+}
+
+.buscar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-http);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buscar button:hover {
+    background-color: #f39c12;
+}
+
+
+.introduccion-real > table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    background-color: #c6c4c4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.introduccion-real > table th,
+.introduccion-real > table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.introduccion-real > table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.introduccion-real > table tr:nth-child(even) {
+    background-color: #8c8b8b;
+}
+
+.introduccion-real > table tr:hover {
+    cursor: pointer;
+    background-color: var(--color-http);
+    transform: scale(1.01);
+    transition: 0.3s;
+}
+
+
+.pie-pagina {
+    background-image: url('../../img/ut/fondos/fondoHTTPDNS.png'); /* Reemplaza con la ruta de tu imagen */ 
+    display: flex;
+    justify-content: center;
+}
+
+.info-personal > p > a {
+    color: var(--color-dns);
+    text-decoration: none;
+}
+
+.footer-contenido {
+    max-width: calc(100% - 250px); /* Ajusta el ancho para restar el espacio de la sidebar */
+    margin-left: 250px; /* Empieza después del ancho de la sidebar */
+    text-align: center; /* Alinea el texto a la izquierda */
+}
+
+hr {
+    margin: 2% 0%;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .contenido {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .layoutCajas {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .tarjetasSubidas {
+        width: 100%;
+    }
+
+    #cgi {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    #php {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    #python {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    #java {
+        grid-area: 4 / 1 / 5 / 2;
+    }   
+    
+    .listas {
+        padding: 6%;
+    }
+
+    .plantillaGitHub {
+        padding: 2%;
+        word-wrap: break-word;
+    }
+
+    .footer-contenido {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}

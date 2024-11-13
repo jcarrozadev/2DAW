@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/favicon.svg" type="image/x-icon">
+    <title>JAC | UT.2 - HTTP</title>
+    <!-- IMPORT -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/import.css">
+    <link rel="stylesheet" href="../css/anims.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/individual/http.css">
+    <!-- JS -->
+    <script src="../js/copiar.js"></script>
+</head>
+<body>
+    <div class="contenedor">
+        <aside class="sidebar">
+            <div class="redes-sociales">
+                <a href="https://es.linkedin.com/in/javier-arias-carroza-0318582b4" target="_blank" class="icono-red">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://instagram.com/jcarroza_27" target="_blank" class="icono-red">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/jcarrozadev" target="_blank" class="icono-red">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <img src="https://avatars.githubusercontent.com/u/97004111?v=4" alt="Logo" class="logo" style="border-radius: 50%;">
+            <div class="filtrar-posts">
+                <input type="text" placeholder="Filtrar posts">
+            </div>
+            <img src="../img/ut/http.png" alt="WWW Logo" class="logo" style="border-radius: 50%; width: 20%; margin-bottom: 0;">
+            <nav class="menu">
+                <hr>
+                <a href="#introduccion">Introducción a HTTP</a>
+                <a href="#paraquesirve">¿Para qué nos servirá?</a>
+                <a href="#cliWeb">Cliente Web</a>
+                <a href="#serWeb">Servidor Web</a>
+                <a href="#ejempSerWeb">Ejemplos Servidores Web</a>
+                <a href="#metPeticionHTTP">Métodos Petición HTTP</a>
+                <a href="#codEstado">Códigos de Estado</a>
+                <hr>
+                <a href="../../index.html" id="volver">Volver</a>
+            </nav>
+        </aside>
+    
+        <main class="contenido">
+            <!-- <section class="introduccion">
+                <h1>HTML y la semántica web</h1>
+                <p>Código HTML y sus elementos...</p>
+            </section> -->
+            <section class="introduccion-cabecera">
+                <h1>HTTP</h1>
+                <p>Primera parte de Servicios Web<span class="parpadea">|</span></p>
+            </section>
+    
+            <!-- Sección de introducción real -->
+            <div class="introduccion-real">
+                <h2 id="introduccion">Introducción a HTTP</h2>
+                <p>
+                    HTTP (Hypertext Transfer Protocol) es un protocolo de comunicación que permite la transferencia de información en la web.<br> Es el protocolo que utilizan los navegadores web para solicitar y recibir páginas web desde los servidores. <br>HTTP define cómo se formatean y transmiten los mensajes, y cómo los servidores y navegadores deben responder a diversas solicitudes. Es un protocolo sin estado, lo que significa que cada solicitud se realiza de forma independiente, sin conservar información de solicitudes anteriores.
+                </p>
+                <h3 id="paraquesirve">¿Para que nos servirá?</h3>
+                <p>
+                    HTTP (Hypertext Transfer Protocol) es un protocolo de comunicación utilizado para transferir datos a través de la web. Es la base de cualquier intercambio de datos en la web y sigue un modelo de solicitud-respuesta entre un cliente y un servidor.
+                </p>
+                <h3 id="cliWeb">Cliente Web</h3>
+                <p>
+                    Como cliente web, se puede utilizar cualquier navegador web, como Google Chrome, Mozilla Firefox, Safari, Microsoft Edge, etc. Estos navegadores son capaces de enviar solicitudes HTTP a servidores web y recibir respuestas de ellos. 
+                    <div class="listas" style="margin-top: 1%;">
+                        <ol>
+                            <li>
+                                Utilizando el protocolo <span class="textoDestacable">HTTP</span> descarga los documentos en los diferentes
+                                formatos de la web (HTML, CSS, Javascript) así como los recursos asociados
+                                como fuentes, iconos o multimedia (imágenes – vídeos).
+                            </li>
+                            <li>
+                                Puede negociar algunas características particulares. Por ejemplo, si se
+                                soporta compresión o no.
+                            </li>
+                            <li>
+                                Interpreta la información en los documentos y renderiza el documento.
+                            </li>
+                            <li>
+                                Permite recoger información del usuario y enviarla al servidor como parámetros
+                                en una petición web <span class="textoDestacable">GET</span> o <span class="textoDestacable">POST</span>.
+                            </li>
+                            <li>
+                                Gestiona las cookies que han sido enviadas por los servidores.<br>
+                            </li>
+                        </ol>
+                    </div>
+                </p>
+                <h3 id="serWeb">Servidor Web</h3>
+                <p>
+                    Un servidor web, soporta el protocolo HTTP y es capaz de recibir solicitudes HTTP de los clientes y enviar respuestas a ellos.
+                    <br> <span class="textoDestacable">Atiende a las peticiones del cliente.</span>
+                    <br>
+                    De distintas formas, puede ejecutar las siguientes aplicaciones:
+                    <div class="layoutCajas">
+                        <div class="tarjetasSubidas" id="cgi">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEkb3KmXLWCrZFT0GtsslkVrHVgvCzzOHWXQ&s" alt="" width="10%"><br>
+                            CGI: Common Gateway Interface.
+                        </div>
+                        <div class="tarjetasSubidas" id="php">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="" width="10%"><br>
+                            PHP: Hypertext Preprocessor.
+                        </div>
+                        <div class="tarjetasSubidas" id="python">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png" alt="" width="5%"><br>
+                            Python.
+                        </div>
+                        <div class="tarjetasSubidas" id="java">
+                            <img src="https://rosamarfil.es/tutoriales/wp-content/uploads/2019/08/java-logo-png.png" alt="" width="10%"><br>
+                            Java.
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    También podremos alterar el contenido con módulos como <span class="textoDestacable">HTML, JavaScript y AYAX</span>.
+                </p>
+                <h3 id="ejempSerWeb">Ejemplos Servidores Web</h3>
+                <p>
+                    Como servidor web, se puede utilizar cualquier servidor web, como Apache, Nginx, IIS, etc. Estos servidores son capaces de recibir solicitudes HTTP de los clientes y enviar respuestas a ellos.
+                    <div class="listas" style="margin-top: 1%;">
+                        <ol>
+                            <li>
+                                Recibe la petición del cliente.
+                            </li>
+                            <li>
+                                Busca el recurso solicitado.
+                            </li>
+                            <li>
+                                Procesa la petición.
+                            </li>
+                            <li>
+                                Envía la respuesta al cliente.
+                            </li>
+                        </ol>
+                    </div>
+                </p>
+                <h3 id="metPeticionHTTP">Métodos de petición HTTP</h3>
+                <p>
+                    Los métodos de petición HTTP indican la acción que se desea realizar sobre el recurso identificado. Los más populares y usados son:
+                </p>
+                <details id="metodoGet">
+                    <summary>
+                        <h3>GET</h3>
+                    </summary>
+                    <div class="buscar">
+                        <input type="text" class="buscarInput" placeholder="Buscar...">
+                        <button onclick="buscarEnDetalles('metodoGet')">Buscar</button>
+                    </div>
+                    <hr>
+                    <p>
+                        Con el método GET, los datos que se envían al servidor se escriben en la misma dirección URL. En la ventana del navegador, lo encontrarás así:
+                    </p>
+                    <div class="plantillaGitHub">
+                        <p class="gitPlantilla">
+                            https://www.ejemplo.com?nombre=Javier&apellido=Arias
+                        </p>
+                    </div>
+                    <p>
+                        Toda la información introducida por el usuario (los llamados “parámetros URL”) se transmiten tan abiertamente como el URL en sí mismo. Esto tiene ventajas y desventajas.
+                    </p>
+                    <hr>
+                    <h4>Ventajas de usar GET</h4>
+                    <p>
+                        Los parámetros URL se pueden guardar junto a la dirección URL como marcador. De esta manera, puedes introducir una búsqueda y más tarde consultarla de nuevo fácilmente. También se puede volver a acceder a la página a través del historial del navegador.<br><br>
+
+                        Esto resulta práctico, por ejemplo, si visitas con asiduidad un mismo lugar en Google Maps o si guardas páginas web con configuraciones de filtro determinadas.
+                    </p>
+                    <hr>
+                    <h4>Desventajas de usar GET</h4>
+                    <p>
+                        La mayor desventaja del método GET es su <span class="textoDestacable">débil protección de los datos</span>. Los parámetros URL que se envían quedan visibles en la barra de direcciones del navegador y son accesibles sin clave en el historial de navegación, en el caché y en el log de los servidores. Es una <span class="textoDestacable">brecha de Seguridad</span>.<br><br>
+
+                        Otra desventaja es que su capacidad es limitada: dependiendo del servidor y del navegador, no es posible introducir más de 2000 caracteres. Además, los parámetros URL solo pueden contener caracteres ASCII (letras, números, signos, etc.) y no datos binarios como archivos de audio o imágenes.
+                    </p>
+                </details>
+                <details id="metodoPost">
+                    <summary>
+                        <h3>POST</h3>
+                    </summary>
+                    <div class="buscar">
+                        <input type="text" class="buscarInput" placeholder="Buscar...">
+                        <button onclick="buscarEnDetalles('metodoPost')">Buscar</button>
+                    </div>
+                    <p>
+                        El método POST introduce los parámetros en la solicitud HTTP para el servidor. Por ello, no quedan visibles para el usuario. Además, la capacidad del método POST es ilimitada.
+                    </p>
+                    <hr>
+                    <h4>Ventajas de usar POST</h4>
+                    <p>
+                        Al rellenar formularios con nombres de usuario y contraseñas, el método POST ofrece mucha discreción <span class="textoDestacable">(seguridad)</span>.<br> Los datos <span class="textoDestacable">no se muestran</span> en la caché ni tampoco en el historial de navegación.<br> La flexibilidad del método POST también resulta muy útil: no solo se pueden enviar textos cortos, sino también otros tipos de información, como fotos o vídeos.
+                    </p>
+                    <h4>Desventajas de usar POST</h4>
+                    <p>
+                        Cuando una página web que contiene un formulario se actualiza (por ejemplo, cuando se retrocede a la página anterior) los datos del formulario deben transferirse de nuevo (puede que alguna vez hayas recibido una de estas advertencias). Por este motivo, existe el riesgo de que los datos se envíen varias veces por error, lo que, en el caso de una tienda online, puede dar lugar a pedidos duplicados. No obstante, las webs modernas de las tiendas suelen estar preparadas para evitar este tipo de problemas.<br><br>
+
+                        Además, los datos transferidos con el método POST <span class="textoDestacable">no pueden guardarse</span> junto al URL como marcador.
+                    </p>
+                </details>
+                <p>
+                    Además de éstos, también soporta los siguientes métodos:
+                    <div class="listas">
+                        <ul>
+                            <li>
+                                <b>HEAD</b> 🡺 Similar a GET, pero sin el cuerpo de respuesta.
+                            </li>
+                            <li>
+                                <b>PUT</b> 🡺 Crea un recurso en el servidor.
+                            </li>
+                            <li>
+                                <b>DELETE</b> 🡺 Elimina un recurso en el servidor.
+                            </li>
+                            <li>
+                                <b>CONNECT</b> 🡺 Convierte la solicitud en un túnel TCP/IP.
+                            </li>
+                            <li>
+                                <b>OPTIONS</b> 🡺 Devuelve los métodos HTTP que el servidor soporta.
+                            </li>
+                            <li>
+                                <b>TRACE</b> 🡺 Devuelve la solicitud tal y como la recibe el servidor.
+                            </li>
+                            <li>
+                                <b>PATCH</b> 🡺 Modifica parcialmente un recurso.
+                            </li>
+                        </ul>
+                    </div>
+                </p>
+                <h3 id="codEstado">Códigos de estado</h3>
+                <p>
+                    Debemos saber que cada petición envía un <span class="textoDestacable">código de Estado</span>.<br>
+                    Los más populares y los que más podrás ver, son:
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>200</td>
+                            <td>OK - La solicitud ha tenido éxito.</td>
+                        </tr>
+                        <tr>
+                            <td>201</td>
+                            <td>Created - La solicitud ha tenido éxito y se ha creado un nuevo recurso.</td>
+                        </tr>
+                        <tr>
+                            <td>204</td>
+                            <td>No Content - La solicitud ha tenido éxito pero no hay contenido que devolver.</td>
+                        </tr>
+                        <tr>
+                            <td>400</td>
+                            <td>Bad Request - La solicitud no se pudo entender o era incorrecta.</td>
+                        </tr>
+                        <tr>
+                            <td>401</td>
+                            <td>Unauthorized - La autenticación es necesaria y ha fallado o no se ha proporcionado.</td>
+                        </tr>
+                        <tr>
+                            <td>403</td>
+                            <td>Forbidden - El servidor ha entendido la solicitud pero se niega a autorizarla.</td>
+                        </tr>
+                        <tr>
+                            <td>404</td>
+                            <td>Not Found - El recurso solicitado no se ha encontrado.</td>
+                        </tr>
+                        <tr>
+                            <td>500</td>
+                            <td>Internal Server Error - Error genérico del servidor.</td>
+                        </tr>
+                        <tr>
+                            <td>502</td>
+                            <td>Bad Gateway - El servidor recibió una respuesta inválida del servidor ascendente.</td>
+                        </tr>
+                        <tr>
+                            <td>503</td>
+                            <td>Service Unavailable - El servidor no está disponible temporalmente.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>    
+    <footer class="pie-pagina">
+        <div class="footer-contenido">
+            <div class="info-personal">
+                <img src="https://github.com/jcarrozadev.png" alt="Foto de perfil">
+                <h2><span class="textoDestacable">jcarrozadev</span></h2>
+                <p>
+                    Soy Javier Arias Carroza, Desarrollador Web.<br><br> Este es un proyecto del curso DAW para aprender y documentar los recursos aprendidos en clase.
+                </p>
+                <p><br>Puedes encontrar más sobre mí en <a href="https://github.com/jcarrozadev" target="_blank">jcarrozadev</a></p>
+            </div>
+    
+            <div class="redes-sociales">
+                <a href="https://github.com/jcarrozadev" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://instagram.com/jcarroza_27" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://es.linkedin.com/in/javier-arias-carroza-0318582b4" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+    
+            <div class="credito">
+                <p>Creado por jcarrozadev para el módulo <span class="textoDestacable">DEAP</span> y alojado en Git Pages.</p>
+                <!-- <p>© Todos los derechos reservados.</p> -->
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

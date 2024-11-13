@@ -25,6 +25,8 @@
     --color-tarjeta: #3a3a3a;
     --color-bordes: #555;
     --color-git: #ff5722;
+    --color-http: #2fc470;
+    --color-dns: #8f32b0;
 }
 
 * {
