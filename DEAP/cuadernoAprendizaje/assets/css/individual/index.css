@@ -135,7 +135,7 @@ main > #contenedorInicial > div > p {
     margin-bottom: 15px;
 }
 
-.contenedor-tarjetas > .tarjeta > button {
+.contenedor-tarjetas > .tarjeta > a > button {
     background-color: var(--color-git);
     color: #fff;
     border: none;
@@ -146,6 +146,6 @@ main > #contenedorInicial > div > p {
     transition: background-color 0.2s ease;
 }
 
-.contenedor-tarjetas > .tarjeta > button:hover {
+.contenedor-tarjetas > .tarjeta > a > button:hover {
     background-color: #c63f16;
 }

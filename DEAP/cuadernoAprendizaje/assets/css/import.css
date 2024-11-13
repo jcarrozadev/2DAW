@@ -69,7 +69,7 @@ h1 {
     cursor: pointer; /* Añade un cursor de puntero para enfatizar la interactividad */
 }
 
-h1::after, h2::after {
+h1::after, h2::after, h3::after, h4::after {
     content: '';
     position: absolute;
     left: 0;
@@ -79,14 +79,17 @@ h1::after, h2::after {
     transition: width 0.5s ease-in-out; /* Controla la duración y el estilo de la animación */
 }
 
-h1:hover::after, h2:hover::after {
+h1:hover::after, h2:hover::after, h3:hover::after, h4:hover::after {
     width: 100%; /* La línea se extiende a lo largo de todo el texto al hacer hover */
 }
 
 h2 {
     font-family: neueExtraBold;
-    font-size: 1rem;
     position: relative;
     display: inline-block; /* Esto asegura que el efecto subrayado no se extienda más allá del texto */
     cursor: pointer; /* Añade un cursor de puntero para enfatizar la interactividad */
+}
+
+h2 {
+    font-size: 2em;
 }

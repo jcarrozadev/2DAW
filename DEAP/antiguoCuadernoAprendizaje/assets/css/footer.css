@@ -1,0 +1,8 @@
+/* Javier Arias Carroza */
+
+footer {
+    padding: 2%;
+    background-color: var(--principal);
+    color: #eceff1;
+    margin-top: auto; /* Hacer que se vaya abajo por el display flex del body */
+}
