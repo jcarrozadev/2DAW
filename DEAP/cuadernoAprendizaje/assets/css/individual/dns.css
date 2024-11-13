@@ -151,6 +151,29 @@ h3,h4 {
     opacity: 1;
 }
 
+.subir-arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-dns);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.subir-arriba:hover {
+    background-color: #7032aa;
+    transform: scale(1.1);
+}
+
 /* Estilos de la sección de introducción con fondo */
 .introduccion-cabecera {
     background-image: url('../../img/ut/fondos/fondoDNS.png'); /* Reemplaza con la ruta de tu imagen */
