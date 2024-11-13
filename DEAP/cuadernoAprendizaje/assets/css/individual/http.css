@@ -425,7 +425,7 @@ details[open] > summary {
 }
 
 .info-personal > p > a {
-    color: var(--color-dns);
+    color: var(--color-http);
     text-decoration: none;
 }
 
