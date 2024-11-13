@@ -91,6 +91,8 @@ h3,h4 {
 
 .menu a:hover {
     background-color: #444;
+    transform: scale(1.01);
+    transition: all 0.3s;
 }
 
 .contenido {
@@ -384,4 +386,36 @@ details[open] > summary {
 
 hr {
     margin: 2% 0%;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .contenido {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        overflow-y: visible;
+    }
+    
+    #pasosRepositorioIDE {
+        padding: 6%;
+    }
+
+    .plantillaGitHub {
+        padding: 2%;
+        word-wrap: break-word;
+    }
+
+    .footer-contenido {
+        margin-left: 0;
+        max-width: 100%;
+    }
 }

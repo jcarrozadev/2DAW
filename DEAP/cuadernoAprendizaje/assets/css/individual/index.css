@@ -149,3 +149,65 @@ main > #contenedorInicial > div > p {
 .contenedor-tarjetas > .tarjeta > a > button:hover {
     background-color: #c63f16;
 }
+
+@media (max-width: 768px) {
+    .contenedor-tarjetas > .tarjeta {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    main > #contenedorInicial {
+        height: auto;
+        padding: 20px;
+    }
+
+    main > #contenedorInicial > #logo {
+        width: 80%;
+        margin: 10% auto;
+    }
+
+    main > #contenedorInicial > div {
+        width: 90%;
+    }
+
+    main > #contenedorInicial > div > img {
+        width: 50%;
+    }
+
+    .introduccion-aprendizaje > h1 {
+        font-size: 1.5rem;
+    }
+
+    .introduccion-aprendizaje > p {
+        font-size: 0.9rem;
+    }
+
+    .seccion-categoria > h2 {
+        font-size: 1.2rem;
+    }
+
+    .contenedor-tarjetas {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contenedor-tarjetas > .tarjeta {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .contenedor-tarjetas > .tarjeta > h3 {
+        font-size: 1rem;
+    }
+
+    .contenedor-tarjetas > .tarjeta > p {
+        font-size: 0.8rem;
+    }
+
+    .contenedor-tarjetas > .tarjeta > a > button {
+        font-size: 0.8rem;
+        padding: 8px;
+        width: 100%;
+    }
+}
