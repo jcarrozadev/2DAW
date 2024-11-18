@@ -8,56 +8,98 @@
 
 async function buscarPokemon(){
 
-    const nombrePokemon = document.getElementById("pokemon-input").value.toLowerCase();
-    const botonBuscar = document.getElementById("search-btn");
-    const infoPokemon = document.getElementById("pokemon-data");
+    const nombrePokemon = document.getElementById("pokemon-input").value.toLowerCase(); // Pokemon que introduce
+    const infoPokemon = document.getElementById("pokemon-data"); // Contenedor para poner la info del pokemon
 
-    let url = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
+    try {
 
-    if (!url) {
-        throw new Error("No se ha encontado Pokemon");
+        // URL Pokemon introducido
+        let url = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
+
+        // Comprobamos que el pokemon existe si no válida 
+        if (!url.ok) {
+            throw new Error("No se ha encontrado Pokemon");
+        }
+
+        let pokemon = await url.json();
+
+        // Limpiar el contenedor para evitar duplicados
+        infoPokemon.innerHTML = '';
+
+        // Nombre del Pokemon (id #nombrePokemon)
+        let nombre = infoPokemon.querySelector("#nombrePokemon");
+
+        if (!nombre) {
+            nombre = document.createElement('p');
+            nombre.id = 'nombrePokemon';
+            infoPokemon.append(nombre);
+        }
+
+        nombre.textContent = "Nombre: "+pokemon.name;
+
+        // ID del Pokemon (id #idPokemon)
+        let id = infoPokemon.querySelector("#idPokemon");
+
+        if (!id) {
+            id = document.createElement('p');
+            id.id = 'idPokemon';
+            infoPokemon.append(id);
+        }
+
+        id.textContent = 'ID: '+pokemon.id;
+
+        // Imagen del Pokemon (id #imagenPokemon)
+        let imagen = infoPokemon.querySelector("#imagenPokemon");
+
+        if (!imagen) {
+            imagen = document.createElement('img');
+            imagen.id = 'imagenPokemon';
+            infoPokemon.append(imagen);
+        }
+
+        if (!pokemon.sprites || !pokemon.sprites.front_default) {
+            throw new Error(`Introduce nombre para mostrar información`);
+        } else {
+            imagen.src = pokemon.sprites.front_default;
+        }       
+
+        $(document).ready(function () {
+            $('#agregar-collection-btn').on('click', agregarAColeccion);
+        })
+
+    } catch (error) {
+        console.error(error.message);
+        infoPokemon.innerHTML = `<p>Error: ${error.message}</p>`;
+    }
+}
+
+function agregarAColeccion(pokemon) {
+    // Obtener la colección actual desde localStorage
+    let coleccion = JSON.parse(localStorage.getItem('coleccionPokemon')) || [];
+
+    // Verificar si el Pokémon ya está en la colección
+    const existe = coleccion.some(p => p.id === pokemon.id);
+    if (existe) {
+        alert(`${pokemon.name} ya está en tu colección.`);
+        return;
     }
 
-    let pokemon = await url.json();
+    // Agregar el Pokémon a la colección
+    coleccion.push({
+        id: pokemon.id,
+        name: pokemon.name,
+        image: pokemon.sprites.front_default
+    });
 
-    let nombre = infoPokemon.querySelector("#nombrePokemon");
-
-    if (!nombre) {
-        nombre = document.createElement('p');
-        nombre.id = 'nombrePokemon';
-        infoPokemon.append(nombre);
-    }
-
-    nombre.textContent = "Nombre: "+pokemon.name;
-
-    let id = infoPokemon.querySelector("#idPokemon");
-
-    if (!id) {
-        id = document.createElement('p');
-        id.id = 'idPokemon';
-        infoPokemon.append(id);
-    }
-
-    id.textContent = 'ID: '+pokemon.id;
-
-    let imagen = infoPokemon.querySelector("#imagenPokemon");
-
-    if (!imagen) {
-        imagen = document.createElement('img');
-        imagen.id = 'imagenPokemon';
-        infoPokemon.append(imagen);
-    }
-
-    imagen.src = pokemon.sprites.front_default;
-
-
-    return pokemon;
+    // Guardar la colección actualizada en localStorage
+    localStorage.setItem('coleccionPokemon', JSON.stringify(coleccion));
+    alert(`${pokemon.name} se ha agregado a tu colección.`);
 }
 
 /**
  *  Descomentar para hacer uso de la función.
  */
-// document.getElementById('search-btn').addEventListener('click',buscarPokemon);
+document.getElementById('search-btn').addEventListener('click',buscarPokemon);
 
 
 /**
@@ -98,11 +140,9 @@ function buscarPokemonJQueryAJAX(){
             }
             imagen.attr('src', pokemon.sprites.front_default);
 
-            botonAgregar.on();
-
         },
         error: function() {
-            let error = $('<p>No se ha encontrado el Pokémon. Por favor, intenta nuevamente.</p>');
+            let error = $('<p>No se ha encontrado el Pokémon.</p>');
             infoPokemon.append(error);
         }
     });
@@ -113,7 +153,7 @@ function buscarPokemonJQueryAJAX(){
  * Haciendo uso de JQuery, descomentar para usar la función buscarPokemonJQueryAJAX
 */
 
-$(document).ready(function(){
+/*$(document).ready(function(){
     $('#search-btn').on('click', buscarPokemonJQueryAJAX);
 }); 
-
+*/
