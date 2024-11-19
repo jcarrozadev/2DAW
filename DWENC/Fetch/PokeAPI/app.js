@@ -6,10 +6,14 @@
  * 
 */
 
+const botonVer = document.getElementById('view-collection-btn');
+botonVer.onclick = () => sacarColeccion();
+
 async function buscarPokemon(){
 
     const nombrePokemon = document.getElementById("pokemon-input").value.toLowerCase(); // Pokemon que introduce
     const infoPokemon = document.getElementById("pokemon-data"); // Contenedor para poner la info del pokemon
+    const botonAgregar = document.getElementById('agregar-collection-btn');
 
     try {
 
@@ -63,9 +67,7 @@ async function buscarPokemon(){
             imagen.src = pokemon.sprites.front_default;
         }       
 
-        $(document).ready(function () {
-            $('#agregar-collection-btn').on('click', agregarAColeccion);
-        })
+        botonAgregar.onclick = () => agregarAColeccion(pokemon); // Pasamos el Pokémon a la función
 
     } catch (error) {
         console.error(error.message);
@@ -73,27 +75,59 @@ async function buscarPokemon(){
     }
 }
 
+
+/** Agregar a la colección */
 function agregarAColeccion(pokemon) {
-    // Obtener la colección actual desde localStorage
-    let coleccion = JSON.parse(localStorage.getItem('coleccionPokemon')) || [];
 
-    // Verificar si el Pokémon ya está en la colección
-    const existe = coleccion.some(p => p.id === pokemon.id);
-    if (existe) {
-        alert(`${pokemon.name} ya está en tu colección.`);
-        return;
-    }
+    // Guardar la colección en localStorage
+    localStorage.setItem(pokemon.name, pokemon.sprites.front_default);
 
-    // Agregar el Pokémon a la colección
-    coleccion.push({
-        id: pokemon.id,
-        name: pokemon.name,
-        image: pokemon.sprites.front_default
-    });
-
-    // Guardar la colección actualizada en localStorage
-    localStorage.setItem('coleccionPokemon', JSON.stringify(coleccion));
     alert(`${pokemon.name} se ha agregado a tu colección.`);
+
+    sacarColeccion();
+
+}
+
+/** Sacar de la colección del localStorage */
+function sacarColeccion() {
+
+    const listaColeccion = document.getElementById('collection-list');
+
+    listaColeccion.innerHTML = '';
+
+    for (let i = 0; i < localStorage.length; i++) {
+
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+
+        let div = document.createElement('div');
+        div.id = key;
+        listaColeccion.appendChild(div);
+
+        let nombreP = document.createElement('p');
+        nombreP.textContent = key;
+        div.appendChild(nombreP);
+
+        let imagenP = document.createElement('img');
+        imagenP.src = value;
+        div.appendChild(imagenP);
+
+        let div2 = document.createElement('div');
+        div2.id = key;
+        div.appendChild(div2);
+
+        let eliminarP = document.createElement('button');
+        eliminarP.id = 'remove-to-collection-btn';
+        eliminarP.textContent = 'Eliminar';
+        div2.appendChild(eliminarP);
+
+        eliminarP.onclick = () => {
+            localStorage.removeItem(key, value);
+            alert(`${key} eliminado correctamente`);
+            sacarColeccion();
+        };
+        
+    }
 }
 
 /**

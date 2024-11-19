@@ -168,6 +168,20 @@ button {
   background-color: #ff6347;
 }
 
+#remove-to-collection-btn {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #000000;
+  background-color: #00f7ff;
+  border: none;
+  border-radius: 5px;
+}
+
+#remove-to-collection-btn:hover {
+  background-color: #ff6347;
+}
+
 .btn-style {
   padding: 0.7rem 1.2rem;
   font-size: 1rem;
