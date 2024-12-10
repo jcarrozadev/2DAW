@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+main {
+    color: var(--color-gris);
+}
+
 h1::after, h2::after, h3::after, h4::after {
     background-color: var(--color-dns); /* Ajusta el color de la línea según el diseño */
 }
@@ -415,6 +419,23 @@ details[open] > summary {
     background-color: var(--color-dns);
     transform: scale(1.01);
     transition: 0.3s;
+}
+
+.boton-presentacion {
+    margin: 2% 0 0 0;
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--color-dns);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-presentacion:hover {
+    background-color: #7032aa;
 }
 
 

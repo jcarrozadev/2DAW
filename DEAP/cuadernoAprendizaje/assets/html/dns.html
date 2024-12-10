@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/favicon.svg" type="image/x-icon">
-    <title>JAC | UT.2 - HTTP</title>
+    <title>JAC | UT.2 - DNS</title>
     <!-- IMPORT -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- CSS -->
@@ -15,6 +15,7 @@
     <!-- JS -->
     <script src="../js/copiar.js"></script>
     <script src="../js/arriba.js"></script>
+    <script src="../js/mostrarTexto.js"></script>
 </head>
 <body>
     <div class="contenedor">
@@ -39,6 +40,10 @@
                 <hr>
                 <a href="#introduccion">Introducción a DNS</a>
                 <a href="#paraquesirve">¿Para qué nos servirá?</a>
+                <a href="#resoluciones">Resolución Directa e Inversa</a>
+                <a href="#configservidor">Configurar servidor DNS</a>
+                <a href="#comandosutiles">Comandos útiles</a>
+                <a href="#registrosdns">Tipos de registros DNS</a>
                 <hr>
                 <a href="../../index.html" id="volver">Volver</a>
             </nav>
@@ -61,11 +66,66 @@
                     DNS (Domain Name System) es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados a redes IP como Internet o una red privada. Asocia información variada con nombres de dominio asignados a cada uno de los participantes.<br>
                     Utiliza el puerto UDP 53.
                 </p>
+                <h3>¿Qué es un dominio?</h3>
+                <p>
+                    Un dominio es un nombre que identifica a una entidad en Internet. Consiste en un conjunto de nombres que se separan por puntos y que se lee de derecha a izquierda. Por ejemplo, en el dominio <span class="textoDestacable">www.google.com</span>, <span class="textoDestacable">com</span> es el dominio de nivel superior, <span class="textoDestacable">google</span> es el dominio de segundo nivel y <span class="textoDestacable">www</span> es el subdominio.
+                    Ejemplo: <span class="textoDestacable">www.google.com</span>
+                </p>
+                <h3>¿Qué es un subdominio?</h3>
+                <p>
+                    Un subdominio es un dominio que forma parte de un dominio de nivel superior. Por ejemplo, en el dominio <span class="textoDestacable">www.google.com</span>, <span class="textoDestacable">www</span> es el subdominio.
+                </p>
                 <h3 id="paraquesirve">¿Para que nos servirá?</h3>
                 <p>
                     Su función principal es <span class="textoDestacable">traducir (resolver)</span> un nombre de dominio a una <span class="textoDestacable">dirección IP</span>.
                 </p>
-                <h3>........</h3>
+                <h3 id="resoluciones">Resolución Directa e Inversa</h3>
+                <p>
+                    <div class="layoutCajas" style="display: flex; justify-content: center; ">
+                        <div class="tarjetasSubidas" onclick="mostrarTexto('directa')" style="cursor: pointer;">
+                            Resolución Directa. (Haz clic para más información)
+                        </div>
+                        <div class="tarjetasSubidas" onclick="mostrarTexto('inversa')" style="cursor: pointer;">
+                            Resolución Inversa. (Haz clic para más información)
+                        </div>
+                    </div>
+                    <div id="textoExplicativo" style="margin-top: 20px; color: var(--color-gris)"></div>
+                </p>
+                <h3 id="configservidor">Configurar servidor DNS</h3>
+                <p>
+                    Para configurar un servidor DNS, se debe tener en cuenta que el servidor debe tener una dirección IP estática y tener instalado el servicio DNS. En Linux, se puede instalar el servicio DNS con el comando:
+                </p>
+<pre>
+<code>
+sudo apt-get install bind9
+</code>
+</pre>
+                <p>
+                    Para más detalles, puedes consultar la <a href="ttps://docs.google.com/presentation/d/e/2PACX-1vTtmGzEpEu4rXxcRP9gCNU3rRQCiLjtzDFbw-ZtRRBLD284uOa8mWsviJ_3lfS6nNYffGOmu950umDe/pub?start=false&loop=false&delayms=5000&slide=id.p1"" target="_blank">presentación sobre cómo configurar un servidor DNS</a>.
+                </p>
+                <p>
+                    Luego, se debe configurar el archivo <span class="textoDestacable">/etc/bind/named.conf.options</span> con las opciones de configuración del servidor DNS.
+                </p>
+                <p>
+                    Puedes ver la presentación completa sobre DNS haciendo clic en el siguiente botón:
+                </p>
+                <a href="https://docs.google.com/presentation/d/e/2PACX-1vTtmGzEpEu4rXxcRP9gCNU3rRQCiLjtzDFbw-ZtRRBLD284uOa8mWsviJ_3lfS6nNYffGOmu950umDe/pub?start=false&loop=false&delayms=5000&slide=id.p1" target="_blank" class="boton-presentacion">
+                    Pasos para configurar un servidor DNS
+                </a>
+                <h3 id="comandosutiles">Comandos Útiles de Consulta</h3>
+                <p>
+                    <span class="textoDestacable">nslookup</span> - Permite consultar la dirección IP de un dominio.<br>
+                    <span class="textoDestacable">dig</span> - Permite consultar información de un dominio.
+                </p>
+                <h3 id="registrosdns">Tipos de registros DNS</h3>
+                <p>
+                    <span class="textoDestacable">A</span> - Asocia un nombre de dominio a una dirección IP.<br>
+                    <span class="textoDestacable">CNAME</span> - Asocia un nombre de dominio a otro nombre de dominio.<br>
+                    <span class="textoDestacable">MX</span> - Asocia un nombre de dominio a un servidor de correo.<br>
+                    <span class="textoDestacable">TXT</span> - Asocia un nombre de dominio a un texto.<br>
+                    <span class="textoDestacable">PTR</span> - Asocia una dirección IP a un nombre de dominio.
+                </p>
+
             </div>
             <button onclick="scrollToTop()" class="subir-arriba"><i class="fa-solid fa-chevron-up"></i></button>
         </main>

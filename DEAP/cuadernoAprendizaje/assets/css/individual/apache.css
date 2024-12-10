@@ -1,0 +1,751 @@
+* {
+    box-sizing: border-box;
+}
+
+h1::after,
+h2::after,
+h3::after,
+h4::after {
+    background-color: var(--color-apache)
+        /* Ajusta el color de la línea según el diseño */
+}
+
+h3,
+h4 {
+    font-family: neueExtraBold;
+    position: relative;
+    display: inline-block;
+    /* Esto asegura que el efecto subrayado no se extienda más allá del texto */
+    cursor: pointer;
+    /* Añade un cursor de puntero para enfatizar la interactividad */
+}
+
+.textoDestacable {
+    color: var(--color-apache);
+    text-shadow: 0px 0px 20px var(--color-apache);
+}
+
+.destacable2 {
+    color: #6a9955;
+    /* Color de los comentarios en Visual Studio */
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.225);
+}
+
+#volver {
+    background-color: #2a2a2a;
+}
+
+#volver:hover {
+    background-color: var(--color-azul);
+}
+
+.contenedor {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.filtrar-posts {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.filtrar-posts input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.filtrar-posts input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.menu {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: #333;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #444;
+    transform: scale(1.01);
+    transition: all 0.3s;
+}
+
+.contenido {
+    margin-left: 250px;
+    /* Espacio para la sidebar */
+    padding: 30px;
+    background-color: #222;
+    color: #fff;
+    min-height: 100vh;
+    width: calc(100% - 250px);
+    /* Asegura que ocupe todo el ancho menos el de la sidebar */
+    overflow-y: auto;
+}
+
+.contenido>* {
+    margin-bottom: 20px;
+}
+
+.introduccion h1 {
+    font-size: 2.5em;
+    color: #f39c12;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+.introduccion p {
+    font-size: 1.2em;
+    color: #ddd;
+}
+
+/* Separación y elegancia */
+.introduccion {
+    padding: 2%;
+    background: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.icono-red {
+    color: #ffffff;
+    /* Color de los iconos */
+    font-size: 24px;
+    /* Tamaño de los iconos */
+    transition: transform 0.5s, color 0.5s;
+    opacity: 0.8;
+}
+
+.icono-red:hover {
+    transform: scale(1.3);
+    /* Efecto de agrandamiento al pasar el cursor */
+    color: #1da1f2;
+    /* Color al hacer hover (puedes cambiarlo al color que prefieras) */
+    transition: 0.5s;
+    opacity: 1;
+}
+
+/* Estilos de la sección de introducción con fondo */
+.introduccion-cabecera {
+    background-image: url('../../img/ut/fondos/fondoApache.png');
+    /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.introduccion-cabecera h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.introduccion-cabecera p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+/* Sección de introducción real */
+.introduccion-real {
+    padding: 30px 20px;
+    background-color: #f9f9f9;
+    /* Color de fondo de la introducción real */
+    border-radius: 8px;
+    margin-top: -10px;
+    /* Hace que parezca pegado a la sección superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.introduccion-real>h2,
+.introduccion-real>h3 {
+    margin-top: 3%;
+}
+
+.introduccion-real>h2,
+.introduccion-real>details>h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+.introduccion-real>h3,
+.introduccion-real>details>summary>h3 {
+    font-size: 1.5em;
+    color: #696969;
+}
+
+.introduccion-real>h4,
+.introduccion-real>details>h4 {
+    font-size: 1.2em;
+    color: var(--color-apache);
+    margin-top: 0.5%;
+}
+
+.introduccion-real>p,
+.introduccion-real>details>p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+#pasosRepositorioIDE {
+    text-align: left;
+    padding: 2%;
+    padding-left: 4%;
+    background-color: #e0e0e0;
+    color: black;
+}
+
+
+/* Botones estado subida archivos */
+
+.estadoSubidas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.tarjetasSubidas {
+    background-color: #e0e0e0;
+    color: black;
+    width: fit-content;
+    display: inline-block;
+    margin: 0.5%;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2%;
+}
+
+.tarjetasSubidas:hover {
+    background-color: #c6c4c4;
+    transition: all 0.3s;
+    transform: scale(1.02);
+}
+
+.subidas {
+    font-weight: bold;
+}
+
+#untracked {
+    grid-area: 1 / 1 / 2 / 2;
+    color: gray;
+}
+
+#added {
+    grid-area: 1 / 2 / 2 / 3;
+    color: rgb(85, 161, 85);
+}
+
+#modified {
+    grid-area: 1 / 3 / 2 / 4;
+    color: #653579;
+}
+
+#staged {
+    grid-area: 1 / 4 / 2 / 5;
+    color: #5b9696;
+}
+
+#commited {
+    grid-area: 1 / 5 / 2 / 6;
+    color: #c0b449;
+}
+
+.pie-pagina {
+    background-image: url('../../img/ut/fondos/fondoapache.png');
+    /* Reemplaza con la ruta de tu imagen */
+    display: flex;
+    justify-content: center;
+}
+
+.info-personal>p>a {
+    color: var(--color-apache);
+    text-decoration: none;
+}
+
+.footer-contenido {
+    max-width: calc(100% - 250px);
+    /* Ajusta el ancho para restar el espacio de la sidebar */
+    margin-left: 250px;
+    /* Empieza después del ancho de la sidebar */
+    text-align: center;
+    /* Alinea el texto a la izquierda */
+}
+
+hr {
+    margin: 2% 0%;
+}
+
+.subir-arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-apache);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.subir-arriba:hover {
+    background-color: var(--color-apache3);
+    transform: scale(1.1);
+}
+
+.boton-presentacion {
+    margin: 2% 0 0 0;
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--color-apache);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-presentacion:hover {
+    background-color: var(--color-apache2);
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .contenido {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    #pasosRepositorioIDE {
+        padding: 6%;
+    }
+
+    .plantillaapacheHub {
+        padding: 2%;
+        word-wrap: break-word;
+    }
+
+    .footer-contenido {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}
+
+.apache-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.apache-item {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    opacity: 0.5;
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Herencia de estilo y efecto de aparición */
+.apache-item>.apache-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.apache-item>.apache-info {
+    font-size: 1.1em;
+    color: #555;
+    display: none;
+}
+
+.apache-item:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.apache-item:hover>.apache-info {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animación para mostrar el contenido */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Contenedor principal */
+.directorios-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+}
+
+/* Título principal */
+.titulo-principal {
+    grid-column: span 3;
+    background-color: var(--color-apache);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.titulo-principal h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.titulo-principal p {
+    font-size: 1.2em;
+    color: #ddd;
+}
+
+/* Estilo de cada item de directorio */
+.directorio-item {
+    background-color: var(--color-gris);
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Título del directorio */
+.directorio-titulo {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--color-apache3);
+    text-transform: uppercase;
+}
+
+/* Información del directorio */
+.directorio-info {
+    font-size: 1.1em;
+    color: #ddd;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Animación que hace que la información se muestre */
+.directorio-item:hover .directorio-info {
+    opacity: 1;
+}
+
+/* Efecto de hover sobre los directorios */
+.directorio-item:hover {
+    transform: translateY(-10px);
+    background-color: var(--color-apache);
+    cursor: pointer;
+}
+
+/* Efecto para hacer que los directorios se muestren con un retardo en la carga */
+.directorio-item {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInUp 0.6s forwards;
+}
+
+.directorio-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.directorio-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.directorio-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Animación de aparición */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.apache-logs {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#logs-title {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.log-directory,
+.config-directory,
+.vh-directory,
+.config-general-directory,
+.modules-directory {
+    margin-bottom: 30px;
+}
+
+.log-heading,
+.config-heading,
+.vh-heading,
+.general-heading,
+.modules-heading {
+    color: var(--color-apache);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.config-subheading {
+    color: var(--color-apache2);
+    display: block;
+    font-size: 1.4rem;
+    margin-top: 15px;
+}
+
+.log-list,
+.config-list,
+.vh-list,
+.general-list,
+.modules-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.log-item,
+.config-item,
+.vh-item,
+.general-item,
+.modules-item {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.log-item strong,
+.config-item strong,
+.vh-item strong,
+.general-item strong,
+.modules-item strong {
+    color: #333;
+    font-weight: bold;
+}
+
+.log-item:before,
+.config-item:before,
+.vh-item:before,
+.general-item:before,
+.modules-item:before {
+    content: "+ ";
+    color: var(--color-apache3);
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .apache-logs {
+        width: 90%;
+    }
+
+    #logs-title {
+        font-size: 1.8rem;
+    }
+
+    .log-heading,
+    .config-heading,
+    .vh-heading,
+    .general-heading,
+    .modules-heading {
+        font-size: 1.4rem;
+    }
+
+    .log-item,
+    .config-item,
+    .vh-item,
+    .general-item,
+    .modules-item {
+        font-size: 0.9rem;
+    }
+}
+
+
+.plantillaGitHub {
+    margin: 0.5% 0%;
+    position: relative;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    color: #000000;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 1%;
+}
+
+.plantillaGitHub:hover {
+    background-color: #c6c4c4;
+}
+
+.copiarPlantilla {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.6% 1% 0% 1%;
+    padding: 0.3% 0.2% 0% 0.2%;
+    background-color: #c6c4c4;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.copiarPlantilla:hover {
+    transform: scale(1.1);
+}
+
+.gitPlantilla {
+    display: block;
+}
+
+details summary::before {
+    content: "+";
+    font-size: 2rem;
+    display: inline-block;
+    margin-right: 1%;
+    font-weight: bold;
+    color: var(--color-apache);
+}
+
+details[open] summary::before {
+    content: "-";
+}
+
+details {
+    border: 2px solid #c6c4c4;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    padding-bottom: 1.1rem;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+details[open] > summary {
+    margin-bottom: 0.5rem;
+}
+
+.buscar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.buscar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: white;
+    margin-right: 10px;
+}
+
+.buscar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-apache);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buscar button:hover {
+    background-color: #f39c12;
+}

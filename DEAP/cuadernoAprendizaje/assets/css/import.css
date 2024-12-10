@@ -27,6 +27,9 @@
     --color-git: #ff5722;
     --color-http: #2fc470;
     --color-dns: #8f32b0;
+    --color-apache: #9f1695;
+    --color-apache2: #520b48;
+    --color-apache3: #ddaddf;
 }
 
 * {
