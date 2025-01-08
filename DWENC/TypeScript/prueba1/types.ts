@@ -1,0 +1,4 @@
+// TYPES
+
+// Type boolean
+
