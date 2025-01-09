@@ -94,19 +94,129 @@ RIGHT JOIN customer AS c ON o.cust_id = c.cust_id
     Duplicar tabla empleados con INNER JOIN con alias Jefe y Empleado
 *********************************************************************************************************************************/
 
--- Desde la tabla empleados
-SELECT 
-	e.fname AS Empleado,
-	jefe.fname AS JefeEmpleado
-FROM employee AS e
-INNER JOIN employee AS jefe ON e.superior_emp_id = jefe.emp_id
-
--- Lo mismo pero desde la tabla jefe
 SELECT
-	Jefe.fname AS Jefe,
-	Empleado.fname AS Empleado
-FROM employee AS Jefe
-LEFT JOIN employee AS Empleado ON Empleado.emp_id = Jefe.superior_emp_id
+	Empleado.fname AS Empleado,
+	Jefe.fname AS Jefe
+FROM employee AS Empleado
+INNER JOIN employee AS Jefe ON Jefe.emp_id = Empleado.superior_emp_id
+
+SELECT
+	Empleado.fname AS Empleado,
+	Jefe.fname AS Jefe
+FROM employee AS Empleado
+LEFT JOIN employee AS Jefe ON Jefe.emp_id = Empleado.superior_emp_id
 /*
-    Si ponemos que el empleado es el que tiene el superior_emp_id igual al emp_id del jefe, nos saldrán los empleados que tienen jefe, pero al poner LEFT JOIN, nos saldrán todos los jefes, aunque no tengan empleados
+    Si ponemos que el empleado es el que tiene el superior_emp_id igual al emp_id del jefe, nos saldrán los empleados que tienen jefe, pero al poner LEFT JOIN, nos saldrán todos los empleados, aunque no tengan jefe
 */
+
+/********************************************************************************************************************************
+    3. Suma del balance entre todas las cuentas
+*********************************************************************************************************************************/
+
+SELECT SUM(avail_balance) AS TotalBalance FROM account
+
+/********************************************************************************************************************************
+    4. El cliente que tiene el balance mayor
+*********************************************************************************************************************************/
+
+SELECT 
+    c.cust_id AS IDCliente,
+    c.cust_type_cd AS Tipo,
+    c.city AS Ciudad,
+    MAX(a.avail_balance) AS Balance
+FROM
+    customer AS c
+INNER JOIN
+    account AS a ON c.cust_id = a.cust_id
+
+/********************************************************************************************************************************
+    5. Cuantos clientes tengo que sean empresas
+*********************************************************************************************************************************/
+
+SELECT COUNT(*) AS TotalEmpresas FROM customer WHERE cust_type_cd = 'B'
+
+/********************************************************************************************************************************
+    6. Cuantos empleados hay en cada departamento, saco el nombre del departamento y numero de empleados
+*********************************************************************************************************************************/
+
+SELECT 
+    d.name AS Departamento,
+    COUNT(e.emp_id) AS NumeroEmpleados
+FROM
+    department AS d
+INNER JOIN
+    employee AS e ON d.dept_id = e.dept_id
+GROUP BY d.name
+
+/********************************************************************************************************************************
+    7. Filtrar para que saque el total de empleados por departamento pero contratados en el año 2002
+*********************************************************************************************************************************/
+
+SELECT 
+    d.name AS Departamento,
+    COUNT(e.emp_id) AS NumeroEmpleados
+FROM
+    department AS d
+INNER JOIN
+    employee AS e ON d.dept_id = e.dept_id
+WHERE
+    YEAR(e.start_date) = 2002
+GROUP BY d.name
+
+/********************************************************************************************************************************
+    8. Lista de empleados contratados en el año 2002
+*********************************************************************************************************************************/
+
+SELECT 
+    e.fname AS Nombre,
+    e.lname AS Apellidos,
+    e.start_date AS FechaContratacion
+FROM
+    employee AS e
+WHERE
+    YEAR(e.start_date) = 2002
+
+/********************************************************************************************************************************
+    9. Ordenación por año y departamento. (En este departamento, el año tal se contrataron tantos empleados)
+*********************************************************************************************************************************/
+
+SELECT 
+    d.name AS Departamento,
+    YEAR(e.start_date) AS AñoContratacion,
+    COUNT(e.emp_id) AS NumeroEmpleados
+FROM
+    employee AS e
+INNER JOIN
+    department AS d ON e.dept_id = d.dept_id
+GROUP BY d.dept_id, YEAR(e.start_date)
+
+/********************************************************************************************************************************
+    10. Sacar todos los empleados, agrupados por departamento, solamente para aquellos departamentos que tienen mas de 2 empleados
+*********************************************************************************************************************************/
+
+SELECT 
+    d.name AS Departamento,
+    COUNT(e.emp_id) AS NumeroEmpleados
+FROM
+    employee AS e
+INNER JOIN
+    department AS d ON e.dept_id = d.dept_id
+GROUP BY d.dept_id
+HAVING NumeroEmpleados > 2
+
+/********************************************************************************************************************************
+    10. Sacar todos los empleados, agrupados por departamento, solamente para aquellos departamentos que tienen mas de 2 empleados
+    y que hayan sido contratados en el año 2002
+*********************************************************************************************************************************/
+
+SELECT 
+    d.name AS Departamento,
+    COUNT(e.emp_id) AS NumeroEmpleados
+FROM
+    employee AS e
+INNER JOIN
+    department AS d ON e.dept_id = d.dept_id
+WHERE
+	YEAR(e.start_date) = 2002
+GROUP BY d.dept_id
+HAVING NumeroEmpleados > 2
