@@ -220,3 +220,15 @@ WHERE
 	YEAR(e.start_date) = 2002
 GROUP BY d.dept_id
 HAVING NumeroEmpleados > 2
+
+
+/********************************************************************************************************************************
+    11. Sacar un listado de clientes que han nacido antes de 1970.
+*********************************************************************************************************************************/
+
+SELECT * 
+FROM customer
+WHERE cust_id IN (
+    SELECT cust_id FROM individual
+    WHERE YEAR(birth_date) < 1970
+);
